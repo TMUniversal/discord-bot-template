@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { join } from 'path'
+import { Snowflake } from 'discord.js'
 const file = require(join('..', 'data.json'))
 
 interface IConfigFile {
@@ -6,11 +8,11 @@ interface IConfigFile {
     webhook: IWebhook;
     botstatToken?: string;
     prefix: string;
-    owners: string | string[];
+    owners: Snowflake | Array<Snowflake>;
 }
 
 interface IWebhook {
-  id: string;
+  id: Snowflake;
   secret: string;
 }
 
