@@ -22,7 +22,7 @@
 			<img src="https://img.shields.io/github/contributors/TMUniversal/discord-bot-template.svg?style=flat">
 		</a>
 		<a href="https://github.com/TMUniversal/discord-bot-template/blob/stable/LICENSE.md">
-			<img src="https://img.shields.io/github/license/TMUniversal/discord-bot-template.svg?style=flat-square">
+			<img src="https://img.shields.io/github/license/TMUniversal/discord-bot-template.svg?style=flat">
 		</a>
 	</p>
 </div>
