@@ -1,7 +1,7 @@
 {
   "apps": [{
       "name": "discord-bot",
-      "script": "src/index.js",
+      "script": "build/index.js",
       "instances": "1",
       "watch": false,
       "args": [
