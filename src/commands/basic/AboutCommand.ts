@@ -22,12 +22,12 @@ export default class PingCommand extends Command {
 
   public exec (message: Message): Promise<Message> {
     return message.util.send(new MessageEmbed({
-      title: this.client.user.username + ' About~',
+      title: this.client.user.username + ' About',
       description: `Hello! I'm ${this.client.user.username}, a discord bot!` +
           '\n-insert a short description of your bot-' +
           '\n ' +
           '\nAs I am still a work in progress, errors may occur. Report any issues to the repository (see below)' +
-          '\nYou can also join the [support server](http://example.com/)\n',
+          '\nYou can also join the [support server](http://example.com/).\n',
       color: 0xc4c4c4,
       thumbnail: {
         url: this.client.user.avatarURL({ dynamic: true })
