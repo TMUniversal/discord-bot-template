@@ -5,9 +5,6 @@
 		<a href="https://github.com/TMUniversal/discord-bot-template/blob/stable/package.json#L3">
 			<img src="https://img.shields.io/badge/discord--bot--template-v0.1.1-c4c4c4.svg?style=flat" />
 		</a>
-		<a href="https://tmuniversal.eu/discord">
-			<img src="https://img.shields.io/discord/727551682090762280.svg?style=flat&logo=discord">
-		</a>
 		<a href="https://tmuniversal.eu/redirect/patreon">
 			<img src="https://img.shields.io/badge/Patreon-support_me-fa6956.svg?style=flat&logo=patreon" />
 		</a>
@@ -46,7 +43,7 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
   - `owners` may be an array of strings
 
 
-```JSON
+```JS
   {
     "clientToken": "<Discord Bot Token>",
     "webhook": {
