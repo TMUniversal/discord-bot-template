@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Command } from 'discord-akairo'
 import { Message } from 'discord.js'
 import { MessageEmbed } from '../../structures/MessageEmbed'
@@ -51,8 +50,8 @@ export default class PingCommand extends Command {
       },
       {
         name: 'Built With',
-        value: `[Discord.js ${pkg.dependencies['discord.js']}](https://github.com/discordjs/discord.js#readme)` +
-              `\n[Discord Akairo ${pkg.dependencies['discord-akairo']}](https://github.com/discord-akairo/discord-akairo#readme)`,
+        value: '[Discord.js](https://github.com/discordjs/discord.js#readme)' +
+              '\n[Discord Akairo](https://github.com/discord-akairo/discord-akairo#readme)',
         inline: true
       }],
       timestamp: new Date(),
