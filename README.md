@@ -3,7 +3,7 @@
 <div>
 	<p align="center">
 		<a href="https://github.com/TMUniversal/discord-bot-template/blob/stable/package.json#L3">
-			<img src="https://img.shields.io/badge/discord--bot--template-v0.1.1-c4c4c4.svg?style=flat" />
+			<img src="https://img.shields.io/github/package-json/v/TMUniversal/discord-bot-template?style=flat&color=c4c4c4" />
 		</a>
 		<a href="https://tmuniversal.eu/redirect/patreon">
 			<img src="https://img.shields.io/badge/Patreon-support_me-fa6956.svg?style=flat&logo=patreon" />
@@ -42,6 +42,10 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
 - Fill in the necessary values, remove the comment (since comments are not supported in JSON).
   - `owners` may be an array of strings
 
+- Customize what your bot says and does, here's what you should change:
+  - Status messages in `src/client/BotClient.ts`
+  - Your bot's description in `src/commands/basic/AboutCommand.ts`
+  - The required permissions in `src/commands/basic/InviteCommand.ts`
 
 ```JS
   {
