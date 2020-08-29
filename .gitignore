@@ -88,6 +88,6 @@ typings/
 .dynamodb/
 
 # Additions
-data.json
+config/main.json
 build
 .vscode

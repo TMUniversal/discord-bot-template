@@ -1,27 +1,27 @@
 # Discord Bot Template (TypeScript)
 
 <div>
-	<p align="center">
-		<a href="https://github.com/TMUniversal/discord-bot-template/blob/stable/package.json#L3">
-			<img src="https://img.shields.io/github/package-json/v/TMUniversal/discord-bot-template?style=flat&color=c4c4c4" />
-		</a>
-		<a href="https://tmuniversal.eu/redirect/patreon">
-			<img src="https://img.shields.io/badge/Patreon-support_me-fa6956.svg?style=flat&logo=patreon" />
-		</a>
-		<br />
-		<a href="https://github.com/TMUniversal/discord-bot-template/actions">
-			<img src="https://github.com/TMUniversal/discord-bot-template/workflows/Test/badge.svg" />
-		</a>
-		<a href="https://github.com/TMUniversal/discord-bot-template/issues">
-			<img src="https://img.shields.io/github/issues/TMUniversal/discord-bot-template.svg?style=flat">
-		</a>
-		<a href="https://github.com/TMUniversal/discord-bot-template/graphs/contributors">
-			<img src="https://img.shields.io/github/contributors/TMUniversal/discord-bot-template.svg?style=flat">
-		</a>
-		<a href="https://github.com/TMUniversal/discord-bot-template/blob/stable/LICENSE.md">
-			<img src="https://img.shields.io/github/license/TMUniversal/discord-bot-template.svg?style=flat">
-		</a>
-	</p>
+  <p align="center">
+    <a href="https://github.com/TMUniversal/discord-bot-template/blob/stable/package.json#L3">
+      <img src="https://img.shields.io/github/package-json/v/TMUniversal/discord-bot-template?style=flat&color=c4c4c4" />
+    </a>
+    <a href="https://tmuniversal.eu/redirect/patreon">
+      <img src="https://img.shields.io/badge/Patreon-support_me-fa6956.svg?style=flat&logo=patreon" />
+    </a>
+    <br />
+    <a href="https://github.com/TMUniversal/discord-bot-template/actions">
+      <img src="https://github.com/TMUniversal/discord-bot-template/workflows/Test/badge.svg" />
+    </a>
+    <a href="https://github.com/TMUniversal/discord-bot-template/issues">
+      <img src="https://img.shields.io/github/issues/TMUniversal/discord-bot-template.svg?style=flat">
+    </a>
+    <a href="https://github.com/TMUniversal/discord-bot-template/graphs/contributors">
+      <img src="https://img.shields.io/github/contributors/TMUniversal/discord-bot-template.svg?style=flat">
+    </a>
+    <a href="https://github.com/TMUniversal/discord-bot-template/blob/stable/LICENSE.md">
+      <img src="https://img.shields.io/github/license/TMUniversal/discord-bot-template.svg?style=flat">
+    </a>
+  </p>
 </div>
 
 # Getting Started
@@ -38,7 +38,7 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
 
 ## Setup
 
-- Make a copy of `data.example.json`, name it `data.json`.
+- In the config directory, make a copy of `main.example.json`, rename it to `main.json`.
 - Fill in the necessary values, remove the comment (since comments are not supported in JSON).
   - `owners` may be an array of strings
 
@@ -54,11 +54,15 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
       "id": "",
       "secret": ""
     },
-    "botstatToken": "<Token>",  // Closed API. Request key (more info on website) or leave empty
     "prefix": ">",
     "owners": "<Your Discord ID>",
     // OR
-    "owners": ["<Your Discord ID>", "<Another Discord ID>"]
+    "owners": ["<Your Discord ID>", "<Another Discord ID>"],
+    // Counting stuff with saving to an API
+    "counter": {
+      "namespace": "",
+      "someKey": ""
+    }
   }
 ```
 
