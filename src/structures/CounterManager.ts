@@ -77,7 +77,7 @@ export default class CounterManager {
   }
 
   public async _updateCount (amount: number, key: string, type: UpdateType = UpdateType.some) {
-    if (amount === 0) return this.logger.silly('CounterManager', 'Amount is 0, passing.')
+    if (amount === 0) return this.logger.silly('CounterManager', 'Delta is 0, passing.')
     try {
       this.logger.silly('CountAPI', `Updating type ${type}: adding ${amount}`)
       return await this._update(config.counter.namespace, key, amount)

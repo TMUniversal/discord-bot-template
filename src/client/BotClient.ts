@@ -6,7 +6,7 @@ import { WebhookLogger } from '../structures/WebhookLogger'
 import configFile from '../config'
 import appRootPath from 'app-root-path'
 import EventEmitterSingleton from '../structures/EventEmitterSingleton'
-import CounterManager from '../structures/Counter'
+import CounterManager from '../structures/CounterManager'
 import StatusUpdater from '../structures/StatusUpdater'
 
 declare module 'discord-akairo' {
