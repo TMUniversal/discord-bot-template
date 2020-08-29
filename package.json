@@ -11,9 +11,10 @@
     "test": "npm run lint",
     "startmon": "ts-node-dev --respawn --transpileOnly ./src/index.ts",
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore src/",
-    "lint:fix": "eslint --ext .js,.ts --ignore-path .gitignore src/ --fix",
-    "watch": "tsc -w -p ./",
-    "clean": "rimraf ./build && mkdir build"
+    "lint:fix": "npm run lint --fix",
+    "clean": "rimraf ./build && mkdir build",
+    "preversion": "npm run test",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "@tmuniversal/counter": "^1.0.2",
