@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "extends": "@tmuniversal/ts/config",
   "compilerOptions": {
     "outDir": "./build",
