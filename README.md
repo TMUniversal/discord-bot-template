@@ -31,6 +31,7 @@ Hosting a discord bot comes with some requirements:
 ## Installation
 
 Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, install the required packages:
+
 > Please use the latest version on Node.js, as this project is constantly keeping up to date.
 > discord-bot-template is built and tested with the latest version of Node.js (as of now that is v14.4.0)
 
@@ -40,6 +41,7 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
 
 - In the config directory, make a copy of `main.example.json`, rename it to `main.json`.
 - Fill in the necessary values, remove the comment (since comments are not supported in JSON).
+
   - `owners` may be an array of strings
 
 - Customize what your bot says and does, here's what you should change:

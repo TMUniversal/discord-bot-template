@@ -10,17 +10,19 @@ export default class InviteCommand extends Command {
       description: {
         content: 'Generate an invite link for the bot.',
         usage: 'invite',
-        examples: [
-          'invite'
-        ]
+        examples: ['invite']
       },
       ratelimit: 3
     })
   }
 
   public exec (message: Message): Promise<Message> {
-    return message.util.send(MessageEmbed.common({ author: message.member.user })
-      // Update the permissions your bot needs in the invite link below
-      .setDescription(`[Add me to your server](https://discord.com/api/oauth2/authorize?client_id=${this.client.user.id}&permissions=8&scope=bot)`))
+    return message.util.send(
+      MessageEmbed.common({ author: message.member.user })
+        // Update the permissions your bot needs in the invite link below
+        .setDescription(
+          `[Add me to your server](https://discord.com/api/oauth2/authorize?client_id=${this.client.user.id}&permissions=8&scope=bot)`
+        )
+    )
   }
 }

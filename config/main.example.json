@@ -4,7 +4,7 @@
     "id": "",
     "secret": ""
   },
-	"prefix": ">",
+  "prefix": ">",
   "owners": "",
   "userBlacklist": ["<some id>"],
   "counter": {

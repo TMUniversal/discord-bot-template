@@ -25,12 +25,12 @@ export class Logger {
   /**
    * Logger instance
    */
-  protected static _instance: Logger;
+  protected static _instance: Logger
 
   /**
    * Current log level
    */
-  protected _logLevel: LogLevel;
+  protected _logLevel: LogLevel
 
   /**
    * Instantiate the Logger singleton.
@@ -40,9 +40,9 @@ export class Logger {
       throw new Error('Can not create multiple instances of Logger singleton.')
     }
 
-    this._logLevel = LogLevel.SILLY;
+    this._logLevel = LogLevel.SILLY
 
-    (this.constructor as typeof Logger)._instance = this
+    ;(this.constructor as typeof Logger)._instance = this
   }
 
   /**
@@ -151,9 +151,8 @@ export class Logger {
 
     if (this._logLevel < level) return
     // eslint-disable-next-line no-undef
-    const out: NodeJS.WritableStream = level > LogLevel.WARN
-      ? process.stdout
-      : process.stderr
+    const out: NodeJS.WritableStream =
+      level > LogLevel.WARN ? process.stdout : process.stderr
 
     out.write(
       [
@@ -167,9 +166,7 @@ export class Logger {
         `[${LogLevel[level].padStart(5, ' ')}]`,
         // Reset
         '\x1b[0m',
-        tag
-          ? `[${tag}]: `
-          : ': ',
+        tag ? `[${tag}]: ` : ': ',
         // Foreground
         `\x1b[${colors[level][1]}m`,
         cleaned,
@@ -184,4 +181,5 @@ export class Logger {
 /**
  * A logger, except that the logging functions do not accept a tag anymore.
  */
-export type AttachedLogger = Omit<Logger, LevelFunctions> & Record<LevelFunctions, (...input: any[]) => Promise<void>>;
+export type AttachedLogger = Omit<Logger, LevelFunctions> &
+  Record<LevelFunctions, (...input: any[]) => Promise<void>>

@@ -11,23 +11,23 @@ export enum LogLevel {
   INFO,
   VERBOSE,
   DEBUG,
-  SILLY,
+  SILLY
 }
 
 export interface IColor {
   /**
    * [background, foreground]
    */
-  [index: number]: [number, number, ColorResolvable];
+  [index: number]: [number, number, ColorResolvable]
 }
 
 export const colors: IColor = {
   [LogLevel.ERROR]: [41, 31, 'RED'],
-  [LogLevel.WARN]: [43, 33, 0xFFFF00],
+  [LogLevel.WARN]: [43, 33, 0xffff00],
   [LogLevel.INFO]: [42, 32, 'GREEN'],
-  [LogLevel.VERBOSE]: [46, 36, 0x00FFFF],
+  [LogLevel.VERBOSE]: [46, 36, 0x00ffff],
   [LogLevel.DEBUG]: [44, 34, 'BLUE'],
-  [LogLevel.SILLY]: [45, 35, 0xFF00FF],
+  [LogLevel.SILLY]: [45, 35, 0xff00ff],
   /**
    * Won't be logged, just here for completeness
    */

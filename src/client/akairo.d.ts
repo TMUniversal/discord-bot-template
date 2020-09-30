@@ -1,4 +1,8 @@
-import { CommandHandler, ListenerHandler, InhibitorHandler } from 'discord-akairo'
+import {
+  CommandHandler,
+  ListenerHandler,
+  InhibitorHandler
+} from 'discord-akairo'
 import StatusUpdater from '@tmware/status-rotate'
 import { Presence } from 'discord.js'
 import EventEmitterSingleton from '../structures/EventEmitterSingleton'
@@ -17,8 +21,8 @@ declare module 'discord-akairo' {
     customEmitter: EventEmitterSingleton
     counter: CounterManager
 
-    start (): Promise<BotClient>
-    changeStatus (): Promise<Presence>
-    stop (): void
+    start(): Promise<BotClient>
+    changeStatus(): Promise<Presence>
+    stop(): void
   }
 }

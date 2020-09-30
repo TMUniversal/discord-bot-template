@@ -2,19 +2,19 @@ import { join } from 'path'
 import { Snowflake } from 'discord.js'
 
 interface ConfigFile {
-    version: string | number
-    clientToken: string
-    webhook: {
-      id: Snowflake,
-      secret: string
-    }
-    prefix: string
-    owners: Snowflake | Array<Snowflake>
-    userBlacklist: Array<Snowflake>
-    counter: {
-      namespace: string,
-      someKey: string
-    }
+  version: string | number
+  clientToken: string
+  webhook: {
+    id: Snowflake
+    secret: string
+  }
+  prefix: string
+  owners: Snowflake | Array<Snowflake>
+  userBlacklist: Array<Snowflake>
+  counter: {
+    namespace: string
+    someKey: string
+  }
 }
 
 export interface PackageJson {

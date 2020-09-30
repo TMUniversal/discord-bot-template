@@ -32,13 +32,19 @@ export default class CounterManager {
 
     // Event handlers
 
-    this.eventEmitter.on('incSome', amount => this.someCounter.increment(amount))
+    this.eventEmitter.on('incSome', amount =>
+      this.someCounter.increment(amount)
+    )
 
     this.eventEmitter.on('postUpdates', () => this.postUpdates())
 
     this.eventEmitter.on('ready', async () => {
       this.logger.silly('CounterManager', 'Ready.')
-      this.logger.debug('CounterManager', 'API Data:', `Somes: ${await this.getSomeCount()}`)
+      this.logger.debug(
+        'CounterManager',
+        'API Data:',
+        `Somes: ${await this.getSomeCount()}`
+      )
     })
 
     this.eventEmitter.emit('ready')
@@ -46,7 +52,9 @@ export default class CounterManager {
 
   public async getSomeCount () {
     try {
-      return (await countapi.get(config.counter.namespace, config.counter.someKey)).value
+      return (
+        await countapi.get(config.counter.namespace, config.counter.someKey)
+      ).value
     } catch (err) {
       this.logger.error('CountAPI', err || new Error())
       throw err || new Error()
@@ -54,9 +62,15 @@ export default class CounterManager {
   }
 
   public postUpdates () {
-    this.logger.debug('CounterManager', 'Uploading counts\n', `some: ${this.someCounter}`)
+    this.logger.debug(
+      'CounterManager',
+      'Uploading counts\n',
+      `some: ${this.someCounter}`
+    )
     try {
-      this._updateSomeCount(this.someCounter.value).then(() => this.someCounter.reset())
+      this._updateSomeCount(this.someCounter.value).then(() =>
+        this.someCounter.reset()
+      )
     } catch (err) {
       this.logger.error('CounterManager', err || new Error())
       throw err || new Error()
@@ -77,14 +91,25 @@ export default class CounterManager {
     }
   }
 
-  public async _updateCount (amount: number, key: string, type: UpdateType = UpdateType.some) {
-    if (amount === 0) return this.logger.silly('CounterManager', 'Delta is 0, passing.')
+  public async _updateCount (
+    amount: number,
+    key: string,
+    type: UpdateType = UpdateType.some
+  ) {
+    if (amount === 0) { return this.logger.silly('CounterManager', 'Delta is 0, passing.') }
     try {
       this.logger.silly('CountAPI', `Updating type ${type}: adding ${amount}`)
       return await this._update(config.counter.namespace, key, amount)
     } catch (err) {
       try {
-        return await this._create(key, config.counter.namespace, amount, 0, 0, type === UpdateType.some ? 50 : 1)
+        return await this._create(
+          key,
+          config.counter.namespace,
+          amount,
+          0,
+          0,
+          type === UpdateType.some ? 50 : 1
+        )
       } catch (err) {
         this.logger.error('CountAPI', err || new Error())
         throw err || new Error()
@@ -92,12 +117,30 @@ export default class CounterManager {
     }
   }
 
-  private async _update (namespace: string, key: string, amount: number): Promise<Object> {
+  private async _update (
+    namespace: string,
+    key: string,
+    amount: number
+  ): Promise<Object> {
     return countapi.update(namespace, key, amount)
   }
 
-  private async _create (key: string, namespace: string, value = 0, enableReset = 0, updateLowerbound = -1, updateUpperbound = 1): Promise<Object> {
-    return countapi.create({ key, namespace, value, enable_reset: enableReset, update_lowerbound: updateLowerbound, update_upperbound: updateUpperbound })
+  private async _create (
+    key: string,
+    namespace: string,
+    value = 0,
+    enableReset = 0,
+    updateLowerbound = -1,
+    updateUpperbound = 1
+  ): Promise<Object> {
+    return countapi.create({
+      key,
+      namespace,
+      value,
+      enable_reset: enableReset,
+      update_lowerbound: updateLowerbound,
+      update_upperbound: updateUpperbound
+    })
   }
 
   public destroy () {

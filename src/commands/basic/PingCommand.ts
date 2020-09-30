@@ -9,9 +9,7 @@ export default class PingCommand extends Command {
       description: {
         content: 'Check latency',
         usage: 'ping',
-        examples: [
-          'ping'
-        ]
+        examples: ['ping']
       },
       ratelimit: 3
     })

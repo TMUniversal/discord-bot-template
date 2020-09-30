@@ -7,12 +7,9 @@ export default class StatusCommand extends Command {
       aliases: ['status'],
       category: 'owner',
       description: {
-        content: 'Set the bot\'s status',
+        content: "Set the bot's status",
         usage: 'status [message]',
-        examples: [
-          'status',
-          'status [Hello there]'
-        ]
+        examples: ['status', 'status [Hello there]']
       },
       ratelimit: 3,
       args: [
@@ -30,8 +27,13 @@ export default class StatusCommand extends Command {
 
   public async exec (message: Message, args: { status: string }) {
     let newStatus: Activity
-    if (!args.status || args.status === '' || args.status == null) newStatus = (await this.client.statusUpdater.updateStatus()).activities[0]
-    else newStatus = (await this.client.statusUpdater.updateStatus({ name: args.status })).activities[0]
-    return message.util.send(`Status changed to: \`${newStatus.type} ${newStatus.name}\``)
+    if (!args.status || args.status === '' || args.status == null) { newStatus = (await this.client.statusUpdater.updateStatus()).activities[0] } else {
+      newStatus = (
+        await this.client.statusUpdater.updateStatus({ name: args.status })
+      ).activities[0]
+    }
+    return message.util.send(
+      `Status changed to: \`${newStatus.type} ${newStatus.name}\``
+    )
   }
 }

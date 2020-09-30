@@ -10,22 +10,27 @@ export class MessageEmbed extends DJSMessageEmbed {
    * This will set the color and footer.
    */
   public static common ({ author }: { author: User }): MessageEmbed {
-    return new this()
-      .setFooter(`Requested by ${author.tag}`, author.displayAvatarURL())
+    return new this().setFooter(
+      `Requested by ${author.tag}`,
+      author.displayAvatarURL()
+    )
   }
 
   /**
    * Build an image MessageEmbed instance, inherited properties from a common one, adds an image.
    */
   public static image (message: { author: User }, url: string): MessageEmbed {
-    return this.common(message)
-      .setImage(url)
+    return this.common(message).setImage(url)
   }
 
   /**
    * Split up a long string into multiple fields for the embed.
    */
-  public splitToFields (title: string = '\u200b', text: string, inline: boolean = false): this {
+  public splitToFields (
+    title: string = '\u200b',
+    text: string,
+    inline: boolean = false
+  ): this {
     const chunks: RegExpMatchArray = text.match(/(.|[\r\n]){1,1024}/g) ?? []
 
     for (const [i, chunk] of chunks.entries()) {
@@ -70,7 +75,10 @@ Object.defineProperty(DJSMessageEmbed.prototype, 'toJSON', {
         count += field.name.length
         if (count >= 6000) {
           this.fields = this.fields.slice(0, i)
-          this.fields[i - 1].value = `${this.fields[i - 1].value.slice(0, -3)}...`
+          this.fields[i - 1].value = `${this.fields[i - 1].value.slice(
+            0,
+            -3
+          )}...`
           break
         }
 

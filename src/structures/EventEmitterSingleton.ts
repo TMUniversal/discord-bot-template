@@ -13,7 +13,7 @@ export default class EventEmitterSingleton extends EventEmitter {
       throw new Error('Can not create multiple instances of singleton.')
     }
 
-    (this.constructor as typeof EventEmitterSingleton)._instance = this
+    ;(this.constructor as typeof EventEmitterSingleton)._instance = this
 
     this.emit('ready')
   }

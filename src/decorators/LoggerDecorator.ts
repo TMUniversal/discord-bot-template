@@ -8,15 +8,16 @@ import { LogLevel } from '../types/LogLevel'
 
 function getHandler (prefix: string): ProxyHandler<Logger> {
   return {
-    get: (target: Logger, prop: keyof Logger): (...data: any[]) => Promise<void> | void => {
+    get: (
+      target: Logger,
+      prop: keyof Logger
+    ): ((...data: any[]) => Promise<void> | void) => {
       if (typeof target[prop] === 'function') {
         if (prop === 'setLogLevel') {
-          return (level: LogLevel): void =>
-            target[prop](level)
+          return (level: LogLevel): void => target[prop](level)
         }
 
-        return (...data: any[]): Promise<void> =>
-          target[prop](prefix, ...data)
+        return (...data: any[]): Promise<void> => target[prop](prefix, ...data)
       }
 
       return target[prop]
@@ -26,9 +27,9 @@ function getHandler (prefix: string): ProxyHandler<Logger> {
 
 // Original idea from:
 // Link: https://github.com/RobinBuschmann/sequelize-typescript/blob/master/lib/annotations/Column.ts
-export function Loggable(defineStatic: boolean): ClassDecorator;
-export function Loggable(prefix: string, defineStatic?: boolean): ClassDecorator;
-export function Loggable<T extends Function>(constructor: T): void;
+export function Loggable(defineStatic: boolean): ClassDecorator
+export function Loggable(prefix: string, defineStatic?: boolean): ClassDecorator
+export function Loggable<T extends Function>(constructor: T): void
 export function Loggable<T extends Function> (
   firstParam: T | string | boolean,
   defineStatic?: boolean
@@ -51,5 +52,7 @@ export function Loggable<T extends Function> (
     }
   }
 
-  Reflect.defineProperty(firstParam.prototype, 'logger', { value: Logger.instance })
+  Reflect.defineProperty(firstParam.prototype, 'logger', {
+    value: Logger.instance
+  })
 }

@@ -14,6 +14,9 @@ export default class GuildDeleteListener extends Listener {
   }
 
   public exec (guild: Guild): void {
-    this.logger.info('GUILD LEAVE', `${this.client.user.tag} has left ${guild.name}`)
+    this.logger.info(
+      'GUILD LEAVE',
+      `${this.client.user.tag} has left ${guild.name}`
+    )
   }
 }

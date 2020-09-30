@@ -10,11 +10,7 @@ export default class HelpCommand extends Command {
       description: {
         content: 'Show help',
         usage: 'help [command]',
-        examples: [
-          'help',
-          'help steal',
-          'help help'
-        ]
+        examples: ['help', 'help steal', 'help help']
       },
       ratelimit: 3,
       args: [
@@ -29,7 +25,10 @@ export default class HelpCommand extends Command {
     })
   }
 
-  public exec (message: Message, { command }: { command: string }): Promise<Message> {
+  public exec (
+    message: Message,
+    { command }: { command: string }
+  ): Promise<Message> {
     if (!command || command?.length === 0) {
       const helpEmbed = new MessageEmbed()
         .setTitle(this.client.user.username + ' Command List')
@@ -37,14 +36,17 @@ export default class HelpCommand extends Command {
         .setTimestamp()
 
       for (const [id, category] of this.client.commandHandler.categories) {
-        helpEmbed.addField(`**${id[0].toUpperCase() + id.slice(1)}**`, '`' + category.array().join('` `') + '`')
+        helpEmbed.addField(
+          `**${id[0].toUpperCase() + id.slice(1)}**`,
+          '`' + category.array().join('` `') + '`'
+        )
       }
 
       return message.util.send(helpEmbed)
     } else {
       const cmd = this.client.commandHandler.findCommand(command)
       if (!cmd) {
-        return message.util.send('That\'s not a valid command!')
+        return message.util.send("That's not a valid command!")
       }
 
       const embed = new MessageEmbed()

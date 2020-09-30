@@ -16,7 +16,18 @@ export default class MissingPermissionsHandler extends Listener {
     this.eventEmitter = EventEmitterSingleton.instance
   }
 
-  public exec (message: Message, command: Command, missingFrom: string, missing: Array<string>): Promise<Message> {
-    return message.util.send(`❗ |   ${missingFrom === 'client' ? 'I am' : 'You are'} missing the following permission${missing.length > 1 ? 's' : ''}: **${missing.join('**, **')}**`)
+  public exec (
+    message: Message,
+    command: Command,
+    missingFrom: string,
+    missing: Array<string>
+  ): Promise<Message> {
+    return message.util.send(
+      `❗ |   ${
+        missingFrom === 'client' ? 'I am' : 'You are'
+      } missing the following permission${
+        missing.length > 1 ? 's' : ''
+      }: **${missing.join('**, **')}**`
+    )
   }
 }
