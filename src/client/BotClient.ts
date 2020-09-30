@@ -7,26 +7,9 @@ import configFile from '../config'
 import appRootPath from 'app-root-path'
 import EventEmitterSingleton from '../structures/EventEmitterSingleton'
 import CounterManager from '../structures/CounterManager'
-import StatusUpdater from '../structures/StatusUpdater'
+import StatusUpdater from '@tmware/status-rotate'
 
-declare module 'discord-akairo' {
-  interface AkairoClient {
-    commandHandler: CommandHandler
-    listenerHandler: ListenerHandler
-    inhibitorHandler: InhibitorHandler
-    config: BotOptions
-    logger: WebhookLogger
-    statusUpdater: StatusUpdater
-    customEmitter: EventEmitterSingleton
-    counter: CounterManager
-
-    start (): Promise<BotClient>
-    changeStatus (): Promise<Presence>
-    stop (): void
-  }
-}
-
-interface BotOptions {
+export interface BotOptions {
   token?: string
   owners?: string | string[]
 }

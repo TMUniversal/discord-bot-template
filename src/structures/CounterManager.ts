@@ -12,6 +12,7 @@ export default class CounterManager {
   private eventEmitter: EventEmitter
   private logger: WebhookLogger
   private someCounter: Counter
+  // eslint-disable-next-line no-undef
   private updateInterval: NodeJS.Timeout
 
   public constructor () {
