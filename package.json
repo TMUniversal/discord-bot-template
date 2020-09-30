@@ -5,17 +5,16 @@
   "main": "build/index.js",
   "scripts": {
     "start": "node .",
-    "cs": "npm run build && node .",
-    "build": "npm run clean && npm run build:ts",
+    "cs": "yarn run build && node .",
+    "build": "yarn run clean && yarn run build:ts",
     "build:ts": "tsc -p ./",
-    "test": "npm run lint",
+    "test": "yarn run lint",
     "startmon": "ts-node-dev --respawn --transpileOnly ./src/index.ts",
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore src/",
-    "lint:fix": "npm run lint --fix",
+    "lint:fix": "yarn run lint --fix",
     "clean": "rimraf ./build && mkdir build",
-    "preversion": "npm run test",
-    "postversion": "git push && git push --tags",
-    "commit": "npx git-cz"
+    "preversion": "yarn run test",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "@tmuniversal/counter": "^1.0.2",
@@ -69,8 +68,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:fix && npm run lint",
-      "pre-push": "npm run test"
+      "pre-commit": "yarn run lint:fix && yarn run lint",
+      "pre-push": "yarn run test"
     }
   },
   "prettier": "@tmware/prettier-config"
