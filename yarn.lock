@@ -112,10 +112,10 @@
   resolved "https://registry.yarnpkg.com/@tmuniversal/counter/-/counter-1.0.4.tgz#60743f3159389a813a762679464dec9f85ddc4eb"
   integrity sha512-nIXkmp3V+885B7Z3lC+LN5+QpapB4Bi6oPjVDS6nvn4kikV+O8uS7fgx7x48c9d+k+1F7HeH6uEmceNjmPAiQg==
 
-"@tmuniversal/ts@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@tmuniversal/ts/-/ts-1.1.0.tgz#47553a6c1efd5c9241ffc41adbd88c82edacf084"
-  integrity sha512-CQUgEcxg35VnH6AGX5lLyH5+OLK1cexmmYf/CbgTlEkYvrb4QnV4dNgWQiJyqPMjAN8fvpNEMryDEuI0647t8Q==
+"@tmuniversal/ts@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@tmuniversal/ts/-/ts-1.1.1.tgz#c6b63bad000d855573c1647c32cda24e9642b1c2"
+  integrity sha512-sI2wqlpTQ3FOhuZjf4YOk4UTdEYV5ZdcpJBNsFfrocrMWlESb/UfTllCTccqqman0xQ2MxtGHIvnIyWD/p5EXg==
 
 "@tmware/eslint-config@^1.0.0":
   version "1.0.0"
