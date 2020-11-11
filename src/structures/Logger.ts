@@ -41,7 +41,6 @@ export class Logger {
     }
 
     this._logLevel = LogLevel.SILLY
-
     ;(this.constructor as typeof Logger)._instance = this
   }
 

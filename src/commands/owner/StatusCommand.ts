@@ -27,7 +27,9 @@ export default class StatusCommand extends Command {
 
   public async exec (message: Message, args: { status: string }) {
     let newStatus: Activity
-    if (!args.status || args.status === '' || args.status == null) { newStatus = (await this.client.statusUpdater.updateStatus()).activities[0] } else {
+    if (!args.status || args.status === '' || args.status == null) {
+      newStatus = (await this.client.statusUpdater.updateStatus()).activities[0]
+    } else {
       newStatus = (
         await this.client.statusUpdater.updateStatus({ name: args.status })
       ).activities[0]
