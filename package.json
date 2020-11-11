@@ -35,7 +35,6 @@
     "@tmware/prettier-config": "^1.0.1",
     "@types/app-root-path": "^1.2.4",
     "@types/debug": "^4.1.5",
-    "@types/lodash": "^4.14.165",
     "@types/moment-duration-format": "^2.2.2",
     "@types/node": "^14.14.7",
     "@types/ws": "^7.4.0",
