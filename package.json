@@ -22,7 +22,7 @@
     "@tmuniversal/counter": "^1.0.2",
     "@tmware/status-rotate": "^1.0.6",
     "app-root-path": "^3.0.0",
-    "axios": "0.19.2",
+    "axios": "0.21.0",
     "countapi-js": "^1.0.1",
     "discord-akairo": "^8.1.0",
     "discord.js": "12.5.1",
