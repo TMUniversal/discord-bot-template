@@ -68,7 +68,9 @@ export default class HelpCommand extends Command {
           true
         )
       }
-      if (cmd.description.usage) { embed.addField('Usage', `\`${cmd.description.usage}\``, true) }
+      if (cmd.description.usage) {
+        embed.addField('Usage', `\`${cmd.description.usage}\``, true)
+      }
       if (cmd.description.examples) {
         embed.addField(
           'Examples',
