@@ -1,16 +1,18 @@
 import { Command } from 'discord-akairo'
-import { Message, Collection } from 'discord.js'
+import { User, Message } from 'discord.js'
 import { MessageEmbed } from '../../structures/MessageEmbed'
+import { markdownCodifyArray } from '../../util/commonFunctions'
+import config from '../../config'
 
 export default class HelpCommand extends Command {
   public constructor () {
     super('help', {
-      aliases: ['help', '?'],
+      aliases: ['help'],
       category: 'basic',
       description: {
         content: 'Show help',
         usage: 'help [command]',
-        examples: ['help', 'help steal', 'help help']
+        examples: ['help', 'help help']
       },
       ratelimit: 3,
       args: [
@@ -32,33 +34,55 @@ export default class HelpCommand extends Command {
     if (!command || command?.length === 0) {
       const helpEmbed = new MessageEmbed()
         .setTitle(this.client.user.username + ' Command List')
-        .setFooter(this.client.user.username)
+        .setFooter(`${this.client.user.username} v${config.version}`)
         .setTimestamp()
 
       for (const [id, category] of this.client.commandHandler.categories) {
+        if (id === 'owner' && !this.hasAccess(message.author)) continue
+        const commands = category
+          .filter(c => (c.ownerOnly ? this.hasAccess(message.author) : true))
+          .map(c => c.id)
         helpEmbed.addField(
           `**${id[0].toUpperCase() + id.slice(1)}**`,
-          '`' + category.array().join('` `') + '`'
+          markdownCodifyArray(commands)
         )
       }
 
       return message.util.send(helpEmbed)
     } else {
       const cmd = this.client.commandHandler.findCommand(command)
-      if (!cmd) {
-        return message.util.send("That's not a valid command!")
+      if (!cmd || (cmd.ownerOnly && !this.hasAccess(message.author))) {
+        return message.util.send('Unknown command!')
       }
 
       const embed = new MessageEmbed()
         .setTitle(cmd.aliases[0])
         .setDescription(cmd.description.content)
-        .addField('Aliases', '`' + cmd.aliases.join('` `') + '`', true)
-        .addField('Usage', `\`${cmd.description.usage}\``, true)
-        .addField('Examples', '`' + cmd.description.examples.join('`\n`') + '`')
-        .setFooter(this.client.user.username)
+        .setFooter(`${this.client.user.username} v${config.version}`)
         .setTimestamp()
+
+      if (cmd.aliases.slice(1).length > 0) {
+        embed.addField(
+          'Aliases',
+          markdownCodifyArray(cmd.aliases.slice(1)),
+          true
+        )
+      }
+      if (cmd.description.usage) { embed.addField('Usage', `\`${cmd.description.usage}\``, true) }
+      if (cmd.description.examples) {
+        embed.addField(
+          'Examples',
+          markdownCodifyArray(cmd.description.examples, '\n')
+        )
+      }
 
       return message.util.send(embed)
     }
+  }
+
+  private hasAccess (user: User): boolean {
+    // Check if they have perms
+    // message.guild.member(user).permissions.has(command.userPermissions)
+    return this.client.isOwner(user)
   }
 }
