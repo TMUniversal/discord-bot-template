@@ -99,31 +99,30 @@
     eslint-plugin-standard "^4.0.1"
     typescript "^4.0.2"
 
-"@tmware/jitsuyo@^1.1.0":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.3.1.tgz#a3a29d6faab2c830e4377886227a63c407561671"
-  integrity sha512-F2Xc39F9UE2fTEJici0c4+DAB0eXMIdgPcIWDNkBoLEESHBJmLar3hcG8HW6b5Gj5N/lzMskHZB+EDE7U0L5ag==
+"@tmware/jitsuyo@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.4.1.tgz#7ccd87f0f3da3ed5356bbbacd17c24261eacb473"
+  integrity sha512-6Lowf3Da907b67DmEcsQQV1+9FJJ0xsxFkILKHvRMX4Z4XJb59DZ28Ed4HxhIDg6mVXyClf0h8AwKZcwY6f14w==
   dependencies:
-    acronymresolver "^1.1.1"
+    acronymresolver "^1.1.2"
 
 "@tmware/prettier-config@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@tmware/prettier-config/-/prettier-config-1.0.1.tgz#32ef509bbb7edbfa2c872208df792e71b25a8061"
   integrity sha512-qIe+iMWe06teNvpePYPE+Sk3+Ih1DWADahdDu3j6c4SLmXPbkczwjEBwX/EN0HVcEB5jdy9GiXijGnmdxgouUQ==
 
-"@tmware/status-rotate@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.0.6.tgz#7e3cf147afdc103cee3970888e20cf13627c4c26"
-  integrity sha512-6g6TlQSpeK8BMbhfZzFJkeKjHtbvKYDEN2ykqzqhzF4OFOFPfRT10d+eGhzqqC3DEXTZGniTPELwa20Uqh6vsw==
+"@tmware/status-rotate@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.0.8.tgz#1ba507a28b28ce8f0e6591413c752d0d6d7e1f95"
+  integrity sha512-8biR7KU6kUALSK4JlJvCW/AYbmhq0WERqmQZ3Qfl/F6DDLNy/IQTKFazHFHZkjH8v2/8O3kvAhiMM6BPiUfO4Q==
   dependencies:
-    "@tmware/jitsuyo" "^1.1.0"
-    "@tmware/variable-parser" "^1.1.1"
-    axios "0.19.2"
-    discord.js "^12.4.1"
-  optionalDependencies:
+    "@tmware/jitsuyo" "^1.4.1"
+    "@tmware/variable-parser" "^1.1.2"
+    axios "0.21.1"
     discord-akairo "^8.1.0"
+    discord.js "^12.5.1"
 
-"@tmware/variable-parser@^1.1.1":
+"@tmware/variable-parser@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tmware/variable-parser/-/variable-parser-1.1.2.tgz#5d27dc3039091f39530dc826347f9fe79386306c"
   integrity sha512-+kUtiaco6jGxRapxbL3tpwVjidCUrZkaoI2Wp6t7JeOos4zmr7eMok/h5pQyyIUIDs3zvlWCENxd499gE3oyNA==
@@ -259,7 +258,7 @@ acorn@^7.4.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
-acronymresolver@^1.1.1:
+acronymresolver@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/acronymresolver/-/acronymresolver-1.1.2.tgz#dcf574dd447038b732395ddcbbf94fe31bd53357"
   integrity sha512-F4/u28XtC50iR2rNcKa3Eb9H14XmUdE7T0oQRt1uJ7HaHz403fiLE0GxlSdo+YfuEsiC9kN20p2V9UH/fRGyhQ==
@@ -356,6 +355,13 @@ axios@0.19.2:
   integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
   dependencies:
     follow-redirects "1.5.10"
+
+axios@0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -542,7 +548,7 @@ discord-akairo@^8.1.0:
   resolved "https://registry.yarnpkg.com/discord-akairo/-/discord-akairo-8.1.0.tgz#9f3d910e12c197d40d3522a3a93679e2a746a6ca"
   integrity sha512-INWYmHo6NgyYx1ZKGSCmgznVfvkXpWGj4fGCGjO8IPkZ06Bidb9YKr4rXy2lwG0kprCjvqY0qbbhcw6N050abQ==
 
-discord.js@12.5.1, discord.js@^12.4.1:
+discord.js@12.5.1, discord.js@^12.5.1:
   version "12.5.1"
   resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-12.5.1.tgz#992b45753e3815526a279914ccc281d3496f5990"
   integrity sha512-VwZkVaUAIOB9mKdca0I5MefPMTQJTNg0qdgi1huF3iwsFwJ0L5s/Y69AQe+iPmjuV6j9rtKoG0Ta0n9vgEIL6w==
@@ -898,6 +904,11 @@ follow-redirects@1.5.10:
   integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
   dependencies:
     debug "=3.1.0"
+
+follow-redirects@^1.10.0:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.1.tgz#5f69b813376cee4fd0474a3aba835df04ab763b7"
+  integrity sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
 
 fs.realpath@^1.0.0:
   version "1.0.0"
