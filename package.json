@@ -32,7 +32,7 @@
   "devDependencies": {
     "@tmuniversal/ts": "^1.1.1",
     "@tmware/eslint-config": "^1.0.0",
-    "@tmware/prettier-config": "^1.0.1",
+    "@tmware/prettier-config": "^1.0.2",
     "@types/app-root-path": "^1.2.4",
     "@types/debug": "^4.1.5",
     "@types/moment-duration-format": "^2.2.2",
