@@ -469,10 +469,10 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
-countapi-js@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/countapi-js/-/countapi-js-1.0.1.tgz#565ee4856249b15d54aebb470e22cf9baf52daa2"
-  integrity sha512-yuSUsaDiXt57dpntHTrVhbDljZhWbPJlTSC5ZtgNqGFU1bWnswe2dTcsHmsnEKxnpK/qimqf1dPPaE+4yUHY9A==
+countapi-js@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/countapi-js/-/countapi-js-1.0.2.tgz#932412160ef94a81fb0568a0919fd3ab567c0cb0"
+  integrity sha512-HteIJM3mB+Um9Kwdk9tdzF6cit39crhksA2EIlg9qBpecAzU8xxG6NGxFQnDmvKtgYu9SD6u0LNiXg5FxDm8dw==
   dependencies:
     cross-fetch "^3.0.4"
 
