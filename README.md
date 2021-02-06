@@ -35,7 +35,7 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
 > Please use the latest version on Node.js, as this project is constantly keeping up to date.
 > discord-bot-template is built and tested with the latest version of Node.js (as of now that is v14.4.0)
 
-- In the project folder: `npm install`
+- In the project folder: `yarn install`
 
 ## Setup
 
@@ -72,9 +72,9 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
 
 To start the bot, it must first be complied.
 
-- Run `npm run build`
-- You may then start with `npm start` or, if you have pm2 installed: `pm2 start pm2-start.json`
-- Alternatively: Run `npm run cs` to build and then start.
+- Run `yarn run build`
+- You may then start with `yarn start` or, if you have pm2 installed: `pm2 start pm2-start.json`
+- Alternatively: Run `yarn run cs` to build and then start.
 
 # Credits
 
