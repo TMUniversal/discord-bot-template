@@ -1,9 +1,12 @@
 {
+  "compileOnSave": false,
   "extends": "@tmuniversal/ts/config",
   "compilerOptions": {
     "outDir": "./build",
-    "target": "ESNEXT"
+    "target": "ESNEXT",
+    "lib": ["ESNext"],
+    "strictNullChecks": false
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "./src/commands/*.ts"]
 }

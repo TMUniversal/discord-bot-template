@@ -1,3 +1,26 @@
 {
-  "extends": "@tmware"
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["@tmware/eslint-config-typescript"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "tsconfigRootDir": ".",
+    "project": "./tsconfig.json",
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-console": 1,
+    "no-undef": 1,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/restrict-template-expressions": 1
+  }
 }

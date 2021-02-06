@@ -5,43 +5,44 @@
   "main": "build/index.js",
   "scripts": {
     "start": "node .",
-    "cs": "yarn run build && node .",
+    "prod": "NODE_ENV=\"production\" yarn start",
+    "cs": "yarn build && yarn start",
     "build": "yarn run clean && yarn run build:ts",
     "build:ts": "tsc -p ./",
+    "test": "yarn run lint src/",
+    "lint": "eslint --cache --report-unused-disable-directives --ext .js,.ts --ignore-path .gitignore",
+    "lint:fix": "yarn run lint src/ --fix",
     "clean": "rimraf ./build && mkdir build",
-    "test": "yarn run lint",
-    "lint": "eslint --ext .js,.ts --ignore-path .gitignore src/",
-    "lint:fix": "yarn run lint --fix",
-    "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "prettiest": "yarn run prettier:fix && yarn run lint:fix",
-    "preversion": "yarn run test",
-    "postversion": "git push && git push --tags"
+    "preversion": "yarn test",
+    "postversion": "git push && git push --tags",
+    "postinstall": "husky install",
+    "prettiest": "prettier --write . && yarn run lint:fix"
   },
   "dependencies": {
-    "@tmuniversal/counter": "^1.0.2",
-    "@tmware/status-rotate": "^1.0.6",
+    "@tmuniversal/counter": "^1.0.5",
+    "@tmware/status-rotate": "^1.1.1",
     "app-root-path": "^3.0.0",
-    "axios": "0.19.2",
-    "countapi-js": "^1.0.1",
+    "axios": "0.21.1",
+    "countapi-js": "^1.0.2",
     "discord-akairo": "^8.1.0",
     "discord.js": "12.5.1",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2"
   },
   "devDependencies": {
-    "@tmuniversal/ts": "^1.1.1",
-    "@tmware/eslint-config": "^1.0.0",
-    "@tmware/prettier-config": "^1.0.1",
+    "@tmuniversal/ts": "^1.1.2",
+    "@tmware/eslint-config": "^1.1.1",
+    "@tmware/eslint-config-typescript": "^1.0.5",
+    "@tmware/prettier-config": "^1.0.2",
     "@types/app-root-path": "^1.2.4",
     "@types/debug": "^4.1.5",
     "@types/moment-duration-format": "^2.2.2",
-    "@types/node": "^14.14.7",
+    "@types/node": "^14.14.25",
     "@types/ws": "^7.4.0",
-    "eslint": "^7.13.0",
-    "husky": "^4.2.5",
+    "eslint": "^7.19.0",
+    "husky": "^5.0.8",
     "rimraf": "^3.0.2",
-    "typescript": "^4.0.5"
+    "typescript": "^4.1.3"
   },
   "repository": {
     "type": "git",
@@ -60,11 +61,9 @@
     "url": "https://github.com/TMUniversal/discord-bot-template/issues"
   },
   "homepage": "https://github.com/TMUniversal/discord-bot-template#readme",
-  "config": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run lint:fix && yarn run lint",
-      "pre-push": "yarn run test"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "prettier": "@tmware/prettier-config"
