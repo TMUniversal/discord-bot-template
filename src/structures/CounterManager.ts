@@ -9,11 +9,11 @@ enum UpdateType {
 }
 
 export default class CounterManager {
-  private eventEmitter: EventEmitter
-  private logger: WebhookLogger
-  private someCounter: Counter
+  private readonly eventEmitter: EventEmitter
+  private readonly logger: WebhookLogger
+  private readonly someCounter: Counter
   // eslint-disable-next-line no-undef
-  private updateInterval: NodeJS.Timeout
+  private readonly updateInterval: NodeJS.Timeout
 
   public constructor () {
     this.logger = WebhookLogger.instance
@@ -55,7 +55,8 @@ export default class CounterManager {
       return (
         await countapi.get(config.counter.namespace, config.counter.someKey)
       ).value
-    } catch (err) {
+    }
+    catch (err) {
       this.logger.error('CountAPI', err || new Error())
       throw err || new Error()
     }
@@ -71,7 +72,8 @@ export default class CounterManager {
       this._updateSomeCount(this.someCounter.value).then(() =>
         this.someCounter.reset()
       )
-    } catch (err) {
+    }
+    catch (err) {
       this.logger.error('CounterManager', err || new Error())
       throw err || new Error()
     }
@@ -85,7 +87,8 @@ export default class CounterManager {
   public async _updateSomeCount (amount: number) {
     try {
       return await this._updateCount(amount, config.counter.someKey)
-    } catch (err) {
+    }
+    catch (err) {
       this.logger.error('CountAPI', err || new Error())
       throw err || new Error()
     }
@@ -97,22 +100,24 @@ export default class CounterManager {
     type: UpdateType = UpdateType.some
   ) {
     if (amount === 0) {
-      return this.logger.silly('CounterManager', 'Delta is 0, passing.')
+      return await this.logger.silly('CounterManager', 'Delta is 0, passing.')
     }
     try {
       this.logger.silly('CountAPI', `Updating type ${type}: adding ${amount}`)
       return await this._update(config.counter.namespace, key, amount)
-    } catch (err) {
+    }
+    catch (err) {
       try {
         return await this._create(
           key,
           config.counter.namespace,
           amount,
-          0,
+          true,
           0,
           type === UpdateType.some ? 50 : 1
         )
-      } catch (err) {
+      }
+      catch (err) {
         this.logger.error('CountAPI', err || new Error())
         throw err || new Error()
       }
@@ -124,18 +129,18 @@ export default class CounterManager {
     key: string,
     amount: number
   ): Promise<Object> {
-    return countapi.update(namespace, key, amount)
+    return await countapi.update(namespace, key, amount)
   }
 
   private async _create (
     key: string,
     namespace: string,
     value = 0,
-    enableReset = 0,
+    enableReset = true,
     updateLowerbound = -1,
     updateUpperbound = 1
   ): Promise<Object> {
-    return countapi.create({
+    return await countapi.create({
       key,
       namespace,
       value,

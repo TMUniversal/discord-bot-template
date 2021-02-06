@@ -25,7 +25,7 @@ export class WebhookLogger extends Logger {
     return this._instance || new this()
   }
 
-  private _webhookLevel: LogLevel = LogLevel.SILLY
+  private readonly _webhookLevel: LogLevel = LogLevel.SILLY
 
   protected _write (level: LogLevel, tag: string, data: any[]): void {
     super._write(level, `Webhook][${tag}`, data)
@@ -46,7 +46,8 @@ export class WebhookLogger extends Logger {
 
     if (cleaned.length <= 2048) {
       embed.setDescription(cleaned)
-    } else {
+    }
+    else {
       embed.setDescription('Data is too long, falling back to file.')
       options.files = [new MessageAttachment(Buffer.from(cleaned), 'file.txt')]
     }

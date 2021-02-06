@@ -181,4 +181,4 @@ export class Logger {
  * A logger, except that the logging functions do not accept a tag anymore.
  */
 export type AttachedLogger = Omit<Logger, LevelFunctions> &
-  Record<LevelFunctions, (...input: any[]) => Promise<void>>
+Record<LevelFunctions, (...input: any[]) => Promise<void>>

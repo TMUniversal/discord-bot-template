@@ -6,8 +6,8 @@ export default class PingCommand extends Command {
     super('ping', {
       aliases: ['ping'],
       category: 'basic',
-      description: {
-        content: 'Check latency',
+      description: 'Check latency',
+      help: {
         usage: 'ping',
         examples: ['ping']
       },
@@ -15,7 +15,7 @@ export default class PingCommand extends Command {
     })
   }
 
-  public exec (message: Message): Promise<Message> {
-    return message.util.send(`Pong! ${this.client.ws.ping}ms`)
+  public async exec (message: Message): Promise<Message> {
+    return await message.util.send(`Pong! ${this.client.ws.ping}ms`)
   }
 }

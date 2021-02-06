@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { join } from 'path'
 import { Snowflake } from 'discord.js'
 
@@ -9,8 +10,8 @@ interface ConfigFile {
     secret: string
   }
   prefix: string
-  owners: Snowflake | Array<Snowflake>
-  userBlacklist: Array<Snowflake>
+  owners: Snowflake | Snowflake[]
+  userBlacklist: Snowflake[]
   counter: {
     namespace: string
     someKey: string
@@ -26,7 +27,7 @@ export interface PackageJson {
     [name: string]: string
   }
   author: string
-  contributors: Array<string>
+  contributors: string[]
   license: string
   devDependencies?: {
     [packageName: string]: string
@@ -38,15 +39,15 @@ export interface PackageJson {
     type: string
     url: string
   }
-  keywords?: Array<string>
+  keywords?: string[]
   bugs?: {
     url: string
   }
   homepage?: string
 }
 
-const file = require(join('..', 'config', 'main.json'))
-const pkg: PackageJson = require('../package.json')
+const file = require(join('..', 'config', 'main.json')) as ConfigFile
+const pkg = require('../package.json') as PackageJson
 
 const config: ConfigFile = { version: pkg.version, ...file }
 

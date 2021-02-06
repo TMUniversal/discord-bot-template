@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * @author Hydractify
  * @see https://github.com/Hydractify/kanna_kobayashi
@@ -45,11 +46,11 @@ export class MessageEmbed extends DJSMessageEmbed {
   }
 
   public setThumbnail (thumbnail: string | null): this {
-    return super.setThumbnail(thumbnail!)
+    return super.setThumbnail(thumbnail)
   }
 
   public setAuthor (name: any, iconURL?: string | null, url?: string): this {
-    return super.setAuthor(name, iconURL!, url)
+    return super.setAuthor(name, iconURL, url)
   }
 }
 
@@ -70,7 +71,7 @@ Object.defineProperty(DJSMessageEmbed.prototype, 'toJSON', {
       if (this.footer?.text) count += this.footer.text.length
 
       for (let i: number = 0; i < this.fields.length; ++i) {
-        const field: { name: string; value: string } = this.fields[i]
+        const field: { name: string, value: string } = this.fields[i]
 
         count += field.name.length
         if (count >= 6000) {

@@ -7,8 +7,8 @@ export default class InviteCommand extends Command {
     super('invite', {
       aliases: ['invite'],
       category: 'basic',
-      description: {
-        content: 'Generate an invite link for the bot.',
+      description: 'Generate an invite link for the bot.',
+      help: {
         usage: 'invite',
         examples: ['invite']
       },
@@ -16,8 +16,8 @@ export default class InviteCommand extends Command {
     })
   }
 
-  public exec (message: Message): Promise<Message> {
-    return message.util.send(
+  public async exec (message: Message): Promise<Message> {
+    return await message.util.send(
       MessageEmbed.common({ author: message.member.user })
         // Update the permissions your bot needs in the invite link below
         .setDescription(

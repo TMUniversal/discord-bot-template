@@ -1,15 +1,17 @@
 import { Command } from 'discord-akairo'
 import { Message } from 'discord.js'
+import { PackageJson } from '../../config'
 import { MessageEmbed } from '../../structures/MessageEmbed'
-const pkg = require('../../../package.json')
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires
+const pkg: PackageJson = require('../../../package.json')
 
 export default class PingCommand extends Command {
   public constructor () {
     super('about', {
       aliases: ['about'],
       category: 'basic',
-      description: {
-        content: 'Show information about this bot',
+      description: 'Show information about this bot',
+      help: {
         usage: 'about',
         examples: ['about']
       },
@@ -17,8 +19,8 @@ export default class PingCommand extends Command {
     })
   }
 
-  public exec (message: Message): Promise<Message> {
-    return message.util.send(
+  public async exec (message: Message): Promise<Message> {
+    return await message.util.send(
       new MessageEmbed({
         title: this.client.user.username + ' About',
         description:

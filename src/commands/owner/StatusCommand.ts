@@ -6,8 +6,8 @@ export default class StatusCommand extends Command {
     super('status', {
       aliases: ['status'],
       category: 'owner',
-      description: {
-        content: "Set the bot's status",
+      description: "Set the bot's status",
+      help: {
         usage: 'status [message]',
         examples: ['status', 'status [Hello there]']
       },
@@ -29,12 +29,13 @@ export default class StatusCommand extends Command {
     let newStatus: Activity
     if (!args.status || args.status === '' || args.status == null) {
       newStatus = (await this.client.statusUpdater.updateStatus()).activities[0]
-    } else {
+    }
+    else {
       newStatus = (
         await this.client.statusUpdater.updateStatus({ name: args.status })
       ).activities[0]
     }
-    return message.util.send(
+    return await message.util.send(
       `Status changed to: \`${newStatus.type} ${newStatus.name}\``
     )
   }

@@ -13,9 +13,9 @@ export default class CommandLoggerListener extends Listener {
     this.logger = WebhookLogger.instance
   }
 
-  public exec (message: Message, command: Command, args?: any): Promise<void> {
+  public async exec (message: Message, command: Command, args?: any): Promise<void> {
     const isPrivate: boolean = !message.guild
-    return this.logger.info(
+    return await this.logger.info(
       'Command Issued',
       `in ${isPrivate ? 'DMs' : 'a guild'} > ${command.id}`
     )

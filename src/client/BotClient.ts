@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-base-to-string */
 import {
   AkairoClient,
   CommandHandler,
@@ -108,8 +109,8 @@ export default class BotClient extends AkairoClient {
       'gmi'
     )
 
-    this.on('error', e => this.logger.error('CLIENT', e.message))
-    this.on('warn', w => this.logger.warn('CLIENT', w))
+    this.on('error', async e => await this.logger.error('CLIENT', e.message))
+    this.on('warn', async w => await this.logger.warn('CLIENT', w))
 
     //  Process handling / do not crash on error
     process.once('SIGINT', () => this.stop())
@@ -135,7 +136,7 @@ export default class BotClient extends AkairoClient {
     await this.login(this.config.token)
 
     // Register event handling for custom events
-    this.eventEmitter.on('changeStatus', () => this.changeStatus())
+    this.eventEmitter.on('changeStatus', async () => await this.changeStatus())
 
     // Set a startup notice. This will be overridden upon ready.
     this.user.setActivity({ name: 'Starting up...', type: 'PLAYING' })
@@ -150,8 +151,8 @@ export default class BotClient extends AkairoClient {
   }
 
   public async changeStatus (options?: ActivityOptions) {
-    if (options) return this.statusUpdater.updateStatus(options)
-    return this.statusUpdater.updateStatus()
+    if (options) return await this.statusUpdater.updateStatus(options)
+    return await this.statusUpdater.updateStatus()
   }
 
   public stop () {
