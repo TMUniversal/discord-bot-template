@@ -1,8 +1,5 @@
-import {
-  CommandHandler,
-  ListenerHandler,
-  InhibitorHandler
-} from 'discord-akairo'
+/* eslint-disable @typescript-eslint/method-signature-style */
+import { CommandHandler, ListenerHandler, InhibitorHandler, AkairoClient } from 'discord-akairo'
 import StatusUpdater from '@tmware/status-rotate'
 import { Presence } from 'discord.js'
 import EventEmitterSingleton from '../structures/EventEmitterSingleton'
@@ -24,5 +21,26 @@ declare module 'discord-akairo' {
     start(): Promise<BotClient>
     changeStatus(): Promise<Presence>
     stop(): void
+  }
+
+  interface CommandHelpInformation extends Object {
+    usage?: string
+    examples?: string[]
+    hidden?: boolean
+    noLog?: boolean
+  }
+
+  interface Command {
+    help: CommandHelpInformation
+  }
+
+  interface CommandOptions {
+    help: CommandHelpInformation
+  }
+}
+
+declare module 'discord.js' {
+  interface Message {
+    client: AkairoClient
   }
 }

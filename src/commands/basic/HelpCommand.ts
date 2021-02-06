@@ -9,8 +9,8 @@ export default class HelpCommand extends Command {
     super('help', {
       aliases: ['help'],
       category: 'basic',
-      description: {
-        content: 'Show help',
+      description: 'Show help',
+      help: {
         usage: 'help [command]',
         examples: ['help', 'help help']
       },
@@ -27,7 +27,7 @@ export default class HelpCommand extends Command {
     })
   }
 
-  public exec (
+  public async exec (
     message: Message,
     { command }: { command: string }
   ): Promise<Message> {
@@ -49,7 +49,8 @@ export default class HelpCommand extends Command {
       }
 
       return message.util.send(helpEmbed)
-    } else {
+    }
+    else {
       const cmd = this.client.commandHandler.findCommand(command)
       if (!cmd || (cmd.ownerOnly && !this.hasAccess(message.author))) {
         return message.util.send('Unknown command!')
@@ -57,7 +58,7 @@ export default class HelpCommand extends Command {
 
       const embed = new MessageEmbed()
         .setTitle(cmd.aliases[0])
-        .setDescription(cmd.description.content)
+        .setDescription(cmd.description)
         .setFooter(`${this.client.user.username} v${config.version}`)
         .setTimestamp()
 
@@ -68,13 +69,13 @@ export default class HelpCommand extends Command {
           true
         )
       }
-      if (cmd.description.usage) {
-        embed.addField('Usage', `\`${cmd.description.usage}\``, true)
+      if (cmd.help.usage) {
+        embed.addField('Usage', `\`${cmd.help.usage}\``, true)
       }
-      if (cmd.description.examples) {
+      if (cmd.help.examples) {
         embed.addField(
           'Examples',
-          markdownCodifyArray(cmd.description.examples, '\n')
+          markdownCodifyArray(cmd.help.examples, '\n')
         )
       }
 
