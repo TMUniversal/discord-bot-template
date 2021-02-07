@@ -7,12 +7,13 @@ export default class PingCommand extends Command {
       aliases: ['ping'],
       category: 'basic',
       description: 'Check latency',
-      help: {
-        usage: 'ping',
-        examples: ['ping']
-      },
       ratelimit: 3
     })
+
+    this.help = {
+      usage: 'ping',
+      examples: ['ping']
+    }
   }
 
   public async exec (message: Message): Promise<Message> {

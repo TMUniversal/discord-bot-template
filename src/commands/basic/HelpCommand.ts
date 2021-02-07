@@ -10,10 +10,6 @@ export default class HelpCommand extends Command {
       aliases: ['help'],
       category: 'basic',
       description: 'Show help',
-      help: {
-        usage: 'help [command]',
-        examples: ['help', 'help help']
-      },
       ratelimit: 3,
       args: [
         {
@@ -25,6 +21,11 @@ export default class HelpCommand extends Command {
         }
       ]
     })
+
+    this.help = {
+      usage: 'help [command]',
+      examples: ['help', 'help help']
+    }
   }
 
   public async exec (

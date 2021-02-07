@@ -11,12 +11,13 @@ export default class PingCommand extends Command {
       aliases: ['about'],
       category: 'basic',
       description: 'Show information about this bot',
-      help: {
-        usage: 'about',
-        examples: ['about']
-      },
       ratelimit: 3
     })
+
+    this.help = {
+      usage: 'about',
+      examples: ['about']
+    }
   }
 
   public async exec (message: Message): Promise<Message> {

@@ -8,12 +8,13 @@ export default class InviteCommand extends Command {
       aliases: ['invite'],
       category: 'basic',
       description: 'Generate an invite link for the bot.',
-      help: {
-        usage: 'invite',
-        examples: ['invite']
-      },
       ratelimit: 3
     })
+
+    this.help = {
+      usage: 'invite',
+      examples: ['invite']
+    }
   }
 
   public async exec (message: Message): Promise<Message> {

@@ -26,16 +26,10 @@ declare module 'discord-akairo' {
   interface CommandHelpInformation extends Object {
     usage?: string
     examples?: string[]
-    hidden?: boolean
-    noLog?: boolean
   }
 
   interface Command {
-    help: CommandHelpInformation
-  }
-
-  interface CommandOptions {
-    help: CommandHelpInformation
+    help?: CommandHelpInformation
   }
 }
 

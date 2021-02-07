@@ -7,10 +7,6 @@ export default class StatusCommand extends Command {
       aliases: ['status'],
       category: 'owner',
       description: "Set the bot's status",
-      help: {
-        usage: 'status [message]',
-        examples: ['status', 'status [Hello there]']
-      },
       ratelimit: 3,
       args: [
         {
@@ -23,6 +19,11 @@ export default class StatusCommand extends Command {
       ],
       ownerOnly: true
     })
+
+    this.help = {
+      usage: 'status [message]',
+      examples: ['status', 'status [Hello there]']
+    }
   }
 
   public async exec (message: Message, args: { status: string }) {
