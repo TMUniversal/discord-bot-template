@@ -1,8 +1,8 @@
 import { Command } from 'discord-akairo'
-import { User, Message } from 'discord.js'
+import { Message, User } from 'discord.js'
+import config from '../../config'
 import { MessageEmbed } from '../../structures/MessageEmbed'
 import { markdownCodifyArray } from '../../util/commonFunctions'
-import config from '../../config'
 
 export default class HelpCommand extends Command {
   public constructor () {

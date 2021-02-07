@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/method-signature-style */
-import { CommandHandler, ListenerHandler, InhibitorHandler, AkairoClient } from 'discord-akairo'
 import StatusUpdater from '@tmware/status-rotate'
+import { AkairoClient } from 'discord-akairo'
 import { Presence } from 'discord.js'
+import CounterManager from '../structures/CounterManager'
 import EventEmitterSingleton from '../structures/EventEmitterSingleton'
 import { WebhookLogger } from '../structures/WebhookLogger'
-import CounterManager from '../structures/CounterManager'
 import BotClient, { BotOptions } from './BotClient'
 
 declare module 'discord-akairo' {

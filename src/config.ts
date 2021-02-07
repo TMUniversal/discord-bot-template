@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { join } from 'path'
 import { Snowflake } from 'discord.js'
+import { join } from 'path'
 
 interface ConfigFile {
   version: string | number

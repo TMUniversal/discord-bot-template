@@ -1,8 +1,8 @@
-import { EventEmitter } from 'events'
+import Counter from '@tmuniversal/counter'
 import countapi from 'countapi-js'
+import { EventEmitter } from 'events'
 import config from '../config'
 import { WebhookLogger } from './WebhookLogger'
-import Counter from '@tmuniversal/counter'
 
 enum UpdateType {
   some

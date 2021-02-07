@@ -1,25 +1,19 @@
 /* eslint-disable @typescript-eslint/no-base-to-string */
+import StatusUpdater from '@tmware/status-rotate'
+import appRootPath from 'app-root-path'
 import {
   AkairoClient,
   CommandHandler,
-  ListenerHandler,
-  InhibitorHandler
+  InhibitorHandler, ListenerHandler
 } from 'discord-akairo'
 import {
-  User,
-  Message,
-  ActivityType,
-  ActivityOptions,
-  Presence
+  ActivityOptions, Message
 } from 'discord.js'
 import * as path from 'path'
-import axios, { AxiosInstance } from 'axios'
-import { WebhookLogger } from '../structures/WebhookLogger'
 import configFile from '../config'
-import appRootPath from 'app-root-path'
-import EventEmitterSingleton from '../structures/EventEmitterSingleton'
 import CounterManager from '../structures/CounterManager'
-import StatusUpdater from '@tmware/status-rotate'
+import EventEmitterSingleton from '../structures/EventEmitterSingleton'
+import { WebhookLogger } from '../structures/WebhookLogger'
 
 export interface BotOptions {
   token?: string

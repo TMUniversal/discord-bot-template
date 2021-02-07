@@ -1,6 +1,6 @@
 import { Listener } from 'discord-akairo'
-import { WebhookLogger } from '../structures/WebhookLogger'
 import EventEmitterSingleton from '../structures/EventEmitterSingleton'
+import { WebhookLogger } from '../structures/WebhookLogger'
 
 export default class ReadyListener extends Listener {
   logger: WebhookLogger

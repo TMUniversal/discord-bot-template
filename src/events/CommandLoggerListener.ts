@@ -1,5 +1,5 @@
+import { Command, Listener } from 'discord-akairo'
 import { Message } from 'discord.js'
-import { Listener, Command } from 'discord-akairo'
 import { WebhookLogger } from '../structures/WebhookLogger'
 
 export default class CommandLoggerListener extends Listener {
@@ -14,10 +14,9 @@ export default class CommandLoggerListener extends Listener {
   }
 
   public async exec (message: Message, command: Command, args?: any): Promise<void> {
-    const isPrivate: boolean = !message.guild
     return await this.logger.info(
       'Command Issued',
-      `in ${isPrivate ? 'DMs' : 'a guild'} > ${command.id}`
+      `in ${!message.guild ? 'DMs' : 'a guild'} > ${command.id}`
     )
   }
 }

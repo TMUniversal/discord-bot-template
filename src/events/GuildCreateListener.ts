@@ -1,6 +1,6 @@
 import { Listener } from 'discord-akairo'
-import { WebhookLogger } from '../structures/WebhookLogger'
 import { Guild } from 'discord.js'
+import { WebhookLogger } from '../structures/WebhookLogger'
 
 export default class GuildCreateListener extends Listener {
   logger: WebhookLogger
