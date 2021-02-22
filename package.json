@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@tmuniversal/ts": "^1.1.2",
-    "@tmware/eslint-config": "^1.1.1",
+    "@tmware/eslint-config": "^1.1.2",
     "@tmware/eslint-config-typescript": "^1.0.5",
     "@tmware/prettier-config": "^1.0.2",
     "@types/app-root-path": "^1.2.4",
