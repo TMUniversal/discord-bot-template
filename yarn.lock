@@ -123,10 +123,10 @@
   resolved "https://registry.yarnpkg.com/@tmware/prettier-config/-/prettier-config-1.0.2.tgz#22e4ae599d7bb4da39e5370032ae0bde6a660720"
   integrity sha512-Fh0esJEUnneuOgM1cJDl5+Ip5nKEXg9RqjxfbOnFmXdkinZWeTD/wyFPLjoKAxqrL/RHaQUPBhguzBfXevRBRA==
 
-"@tmware/status-rotate@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.1.1.tgz#b54685b0622d34d36f41743c68b6ba3b0303968b"
-  integrity sha512-4XTTT+HgzM7gfTLnU/+hjJHLc4mWeQPOOHpvI4DLnCYhtGI914VubxPavur0vn/a/FXAscVRlikDBJQbuYlAfw==
+"@tmware/status-rotate@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.0.tgz#6f6f52f65869c2ee353d2f69a511ab1bd2b58372"
+  integrity sha512-zLAT5g+VT73eyfSeSsNFxLRpvPH0/u2VGSrgZoQzqarwt0zNv4+/gVswzQed6dS5vO4iDUul2l4NNSKVQ38ung==
   dependencies:
     "@tmware/jitsuyo" "^1.4.1"
     "@tmware/variable-parser" "^1.1.2"
