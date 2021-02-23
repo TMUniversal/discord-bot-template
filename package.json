@@ -33,7 +33,7 @@
     "@tmuniversal/ts": "^1.1.2",
     "@tmware/eslint-config": "^1.1.1",
     "@tmware/eslint-config-typescript": "^1.0.5",
-    "@tmware/prettier-config": "^1.0.2",
+    "@tmware/prettier-config": "^1.0.3",
     "@types/app-root-path": "^1.2.4",
     "@types/debug": "^4.1.5",
     "@types/moment-duration-format": "^2.2.2",
