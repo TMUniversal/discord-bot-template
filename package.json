@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node .",
     "prod": "NODE_ENV=\"production\" yarn start",
-    "cs": "yarn build && yarn start",
     "build": "yarn run clean && yarn run build:ts",
     "build:ts": "tsc -p ./",
     "test": "yarn run lint src/",
@@ -15,7 +14,7 @@
     "clean": "rimraf ./build && mkdir build",
     "preversion": "yarn test",
     "postversion": "git push && git push --tags",
-    "postinstall": "husky install",
+    "prepare": "husky install",
     "prettiest": "prettier --write . && yarn run lint:fix"
   },
   "dependencies": {
