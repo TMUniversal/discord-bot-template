@@ -24,11 +24,11 @@
   </p>
 </div>
 
-# Getting Started
+## Getting Started
 
 Hosting a discord bot comes with some requirements:
 
-## Installation
+### Installation
 
 Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, install the required packages:
 
@@ -37,9 +37,10 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
 
 - In the project folder: `yarn install`
 
-## Setup
+### Setup
 
 - In the config directory, make a copy of `main.example.json`, rename it to `main.json`.
+
 - Fill in the necessary values, remove the comment (since comments are not supported in JSON).
 
   - `owners` may be an array of strings
@@ -63,18 +64,20 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
   }
 ```
 
-## Starting
+### Starting
 
 To start the bot, it must first be complied.
 
 - Run `yarn run build`
+
 - You may then start with `yarn start` or, if you have pm2 installed: `pm2 start pm2-start.json`
+
 - Alternatively: Run `yarn run cs` to build and then start.
 
-# Credits
+## Credits
 
 Credits to [Hydractify](https://github.com/Hydractify/kanna_kobayashi) for their logging system.
 
-# License
+## License
 
 discord-bot-template is released under the [MIT License](LICENSE.md).
