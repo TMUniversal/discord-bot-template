@@ -59,12 +59,7 @@ Assuming you have [Node.js](https://nodejs.org/en/download/current/) installed, 
     "prefix": ">",
     "owners": "<Your Discord ID>",
     // OR
-    "owners": ["<Your Discord ID>", "<Another Discord ID>"],
-    // Counting stuff with saving to an API
-    "counter": {
-      "namespace": "",
-      "someKey": ""
-    }
+    "owners": ["<Your Discord ID>", "<Another Discord ID>"]
   }
 ```
 

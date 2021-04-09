@@ -4,14 +4,13 @@ import { AkairoClient } from 'discord-akairo'
 import { Presence } from 'discord.js'
 import EventEmitterSingleton from '../structures/EventEmitterSingleton'
 import { WebhookLogger } from '../structures/WebhookLogger'
-import BotClient, { BotOptions } from './BotClient'
+import BotClient from './BotClient'
 
 declare module 'discord-akairo' {
   interface AkairoClient {
     commandHandler: CommandHandler
     listenerHandler: ListenerHandler
     inhibitorHandler: InhibitorHandler
-    config: BotOptions
     logger: WebhookLogger
     statusUpdater: StatusUpdater
     customEmitter: EventEmitterSingleton

@@ -20,13 +20,14 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@tmuniversal/counter": "^1.0.5",
     "@tmware/status-rotate": "^1.2.2",
     "app-root-path": "^3.0.0",
     "axios": "0.21.1",
+    "convict": "^6.0.1",
     "countapi-js": "^1.0.2",
     "discord-akairo": "^8.1.0",
     "discord.js": "12.5.3",
+    "dotenv": "^8.2.0",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2"
   },
@@ -37,6 +38,7 @@
     "@tmware/prettier-config": "^1.0.3",
     "@tmware/semantic-release-npm-github-publish": "^1.4.2",
     "@types/app-root-path": "^1.2.4",
+    "@types/convict": "^6.0.1",
     "@types/debug": "^4.1.5",
     "@types/moment-duration-format": "^2.2.2",
     "@types/node": "^14.14.37",

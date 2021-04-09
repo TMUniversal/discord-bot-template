@@ -1,29 +1,20 @@
 /* eslint-disable @typescript-eslint/no-base-to-string */
 import StatusUpdater from '@tmware/status-rotate'
 import appRootPath from 'app-root-path'
-import {
-  AkairoClient,
-  CommandHandler,
-  InhibitorHandler, ListenerHandler
-} from 'discord-akairo'
-import {
-  ActivityOptions, Message
-} from 'discord.js'
+import { AkairoClient, CommandHandler, InhibitorHandler, ListenerHandler } from 'discord-akairo'
+import { ActivityOptions, Message } from 'discord.js'
 import * as path from 'path'
-import configFile from '../config'
+import config from '../config'
 import EventEmitterSingleton from '../structures/EventEmitterSingleton'
 import { WebhookLogger } from '../structures/WebhookLogger'
 
-export interface BotOptions {
-  token?: string
-  owners?: string | string[]
-}
-
 export default class BotClient extends AkairoClient {
-  public config: BotOptions
-  public logger: WebhookLogger
-  public statusUpdater: StatusUpdater
-  public eventEmitter: EventEmitterSingleton
+  public logger = WebhookLogger.instance
+  public eventEmitter = EventEmitterSingleton.instance
+  public statusUpdater: StatusUpdater = new StatusUpdater(
+    this,
+    'https://gist.githubusercontent.com/TMUniversal/253bd3172c3002be3e15e1152dd31bd4/raw/exampleFile.json'
+  )
 
   public listenerHandler: ListenerHandler = new ListenerHandler(this, {
     directory: path.join(__dirname, '..', 'events')
@@ -35,7 +26,7 @@ export default class BotClient extends AkairoClient {
 
   public commandHandler: CommandHandler = new CommandHandler(this, {
     directory: path.join(__dirname, '..', 'commands'),
-    prefix: configFile.prefix,
+    prefix: config.prefix,
     allowMention: false,
     handleEdits: false,
     commandUtil: true,
@@ -43,10 +34,8 @@ export default class BotClient extends AkairoClient {
     defaultCooldown: 6e3,
     argumentDefaults: {
       prompt: {
-        modifyStart: (_: Message, str: string): string =>
-          `${str}\n\nType \`cancel\` to cancel this command...`,
-        modifyRetry: (_: Message, str: string): string =>
-          `${str}\n\nType \`cancel\` to cancel this command...`,
+        modifyStart: (_: Message, str: string): string => `${str}\n\nType \`cancel\` to cancel this command...`,
+        modifyRetry: (_: Message, str: string): string => `${str}\n\nType \`cancel\` to cancel this command...`,
         timeout: 'You have kept me waiting too long.',
         ended: 'Exceeded maximum amount of attempts, cancelling....',
         retries: 3,
@@ -54,25 +43,17 @@ export default class BotClient extends AkairoClient {
       },
       otherwise: ''
     },
-    ignoreCooldown: configFile.owners,
-    ignorePermissions: configFile.owners
+    ignoreCooldown: config.owners,
+    ignorePermissions: config.owners
   })
 
-  public constructor (config: BotOptions) {
+  public constructor () {
     super({
       ownerID: config.owners
     })
 
     // eslint-disable-next-line no-console
     console.log('[Client]', 'Initializing...')
-
-    this.eventEmitter = EventEmitterSingleton.instance
-    this.config = config
-    this.logger = WebhookLogger.instance
-    this.statusUpdater = new StatusUpdater(
-      this,
-      'https://gist.githubusercontent.com/TMUniversal/253bd3172c3002be3e15e1152dd31bd4/raw/exampleFile.json'
-    )
   }
 
   private async _init (): Promise<void> {
@@ -93,10 +74,7 @@ export default class BotClient extends AkairoClient {
     // Regex to match the root path of the project. Escapes path separators on windows and linux
     // tslint:disable-next-line: tsr-detect-non-literal-regexp
     const pathRegex = new RegExp(
-      path
-        .normalize(appRootPath.toString())
-        .replace(/\\/g, '\\\\')
-        .replace(/\//g, '\\/'),
+      path.normalize(appRootPath.toString()).replace(/\\/g, '\\\\').replace(/\//g, '\\/'),
       'gmi'
     )
 
@@ -107,15 +85,11 @@ export default class BotClient extends AkairoClient {
     process.once('SIGINT', () => this.stop())
     process.once('SIGTERM', () => this.stop())
     process.on('uncaughtException', (err: Error) => {
-      const errorMsg = (err ? err.stack || err : '')
-        .toString()
-        .replace(pathRegex, '.')
+      const errorMsg = (err ? err.stack || err : '').toString().replace(pathRegex, '.')
       this.logger.error('EXCEPTION', errorMsg)
     })
     process.on('unhandledRejection', (err: Error) => {
-      const errorMsg = (err ? err.stack || err : '')
-        .toString()
-        .replace(pathRegex, '.')
+      const errorMsg = (err ? err.stack || err : '').toString().replace(pathRegex, '.')
       this.logger.error('REJECTION', 'Uncaught Promise error: \n' + errorMsg)
     })
   }
@@ -124,7 +98,7 @@ export default class BotClient extends AkairoClient {
     // eslint-disable-next-line no-console
     console.log('[Bot]', 'Starting up...')
     await this._init()
-    await this.login(this.config.token)
+    await this.login(config.clientToken)
 
     // Register event handling for custom events
     this.eventEmitter.on('changeStatus', async () => await this.changeStatus())
@@ -133,10 +107,7 @@ export default class BotClient extends AkairoClient {
     this.user.setActivity({ name: 'Starting up...', type: 'PLAYING' })
 
     // Automate status changes and upload stat uploads.
-    this.setInterval(
-      () => this.eventEmitter.emit('changeStatus'),
-      5 * 60 * 1000
-    ) // every five minutes
+    this.setInterval(() => this.eventEmitter.emit('changeStatus'), 5 * 60 * 1000) // every five minutes
 
     return this
   }
@@ -147,10 +118,7 @@ export default class BotClient extends AkairoClient {
   }
 
   public stop () {
-    this.logger.warn(
-      'PROCESS',
-      'Received exit signal => quitting in 4 seconds...'
-    )
+    this.logger.warn('PROCESS', 'Received exit signal => quitting in 4 seconds...')
     this.destroy()
     setTimeout(() => {
       this.logger.warn('PROCESS', 'Exit.')

@@ -1,8 +1,7 @@
-import BotClient from './client/BotClient'
-import configFile from './config'
+/* eslint-disable */
+require('dotenv').config()
 
-const client = new BotClient({
-  token: configFile.clientToken,
-  owners: configFile.owners
-})
+import BotClient from './client/BotClient'
+
+const client = new BotClient()
 client.start()
