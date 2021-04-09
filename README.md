@@ -10,7 +10,7 @@
     </a>
     <br />
     <a href="https://github.com/TMUniversal/discord-bot-template/actions">
-      <img src="https://github.com/TMUniversal/discord-bot-template/workflows/Test/badge.svg" />
+      <img src="https://github.com/TMUniversal/discord-bot-template/workflows/Build/badge.svg" />
     </a>
     <a href="https://github.com/TMUniversal/discord-bot-template/issues">
       <img src="https://img.shields.io/github/issues/TMUniversal/discord-bot-template.svg?style=flat">

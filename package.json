@@ -3,6 +3,7 @@
   "version": "1.1.2",
   "description": "A template for discord bots in typescript.",
   "main": "build/index.js",
+  "private": true,
   "scripts": {
     "start": "node .",
     "prod": "NODE_ENV=\"production\" yarn start",
@@ -15,7 +16,8 @@
     "preversion": "yarn test",
     "postversion": "git push && git push --tags",
     "prepare": "husky install",
-    "prettiest": "prettier --write . && yarn run lint:fix"
+    "prettiest": "prettier --write . && yarn run lint:fix",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@tmuniversal/counter": "^1.0.5",
@@ -33,6 +35,7 @@
     "@tmware/eslint-config": "^1.1.1",
     "@tmware/eslint-config-typescript": "^1.0.5",
     "@tmware/prettier-config": "^1.0.2",
+    "@tmware/semantic-release-npm-github-publish": "^1.4.2",
     "@types/app-root-path": "^1.2.4",
     "@types/debug": "^4.1.5",
     "@types/moment-duration-format": "^2.2.2",
@@ -41,6 +44,7 @@
     "eslint": "^7.20.0",
     "husky": "^5.0.9",
     "rimraf": "^3.0.2",
+    "semantic-release": "^17.4.2",
     "typescript": "^4.1.5"
   },
   "repository": {
