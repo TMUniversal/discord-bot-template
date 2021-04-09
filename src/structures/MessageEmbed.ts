@@ -10,28 +10,21 @@ export class MessageEmbed extends DJSMessageEmbed {
    * Build a common MessageEmbed instance from a message.
    * This will set the color and footer.
    */
-  public static common ({ author }: { author: User }): MessageEmbed {
-    return new this().setFooter(
-      `Requested by ${author.tag}`,
-      author.displayAvatarURL()
-    )
+  public static common({ author }: { author: User }): MessageEmbed {
+    return new this().setFooter(`Requested by ${author.tag}`, author.displayAvatarURL())
   }
 
   /**
    * Build an image MessageEmbed instance, inherited properties from a common one, adds an image.
    */
-  public static image (message: { author: User }, url: string): MessageEmbed {
+  public static image(message: { author: User }, url: string): MessageEmbed {
     return this.common(message).setImage(url)
   }
 
   /**
    * Split up a long string into multiple fields for the embed.
    */
-  public splitToFields (
-    title: string = '\u200b',
-    text: string,
-    inline: boolean = false
-  ): this {
+  public splitToFields(title: string = '\u200b', text: string, inline: boolean = false): this {
     const chunks: RegExpMatchArray = text.match(/(.|[\r\n]){1,1024}/g) ?? []
 
     for (const [i, chunk] of chunks.entries()) {
@@ -41,15 +34,15 @@ export class MessageEmbed extends DJSMessageEmbed {
     return this
   }
 
-  public addBlankField (inline: boolean = false): this {
+  public addBlankField(inline: boolean = false): this {
     return this.addField('\u200b', '\u200b', inline)
   }
 
-  public setThumbnail (thumbnail: string | null): this {
+  public setThumbnail(thumbnail: string | null): this {
     return super.setThumbnail(thumbnail)
   }
 
-  public setAuthor (name: any, iconURL?: string | null, url?: string): this {
+  public setAuthor(name: any, iconURL?: string | null, url?: string): this {
     return super.setAuthor(name, iconURL, url)
   }
 }
@@ -57,7 +50,7 @@ export class MessageEmbed extends DJSMessageEmbed {
 // Messing with original prototype instead of the extended one because d.js internally uses their own embed class
 const { toJSON }: { toJSON: () => object } = DJSMessageEmbed.prototype
 Object.defineProperty(DJSMessageEmbed.prototype, 'toJSON', {
-  value (this: MessageEmbed) {
+  value(this: MessageEmbed) {
     // It's not possible to exceed the limit without fields
     if (this.fields?.length) {
       let count: number = 0
@@ -71,15 +64,12 @@ Object.defineProperty(DJSMessageEmbed.prototype, 'toJSON', {
       if (this.footer?.text) count += this.footer.text.length
 
       for (let i: number = 0; i < this.fields.length; ++i) {
-        const field: { name: string, value: string } = this.fields[i]
+        const field: { name: string; value: string } = this.fields[i]
 
         count += field.name.length
         if (count >= 6000) {
           this.fields = this.fields.slice(0, i)
-          this.fields[i - 1].value = `${this.fields[i - 1].value.slice(
-            0,
-            -3
-          )}...`
+          this.fields[i - 1].value = `${this.fields[i - 1].value.slice(0, -3)}...`
           break
         }
 

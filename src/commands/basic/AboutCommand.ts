@@ -2,7 +2,7 @@ import { Command } from 'discord-akairo'
 import { Message } from 'discord.js'
 import { PackageJson } from '../../config'
 import { MessageEmbed } from '../../structures/MessageEmbed'
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg: PackageJson = require('../../../package.json')
 
 export default class PingCommand extends Command {
@@ -37,15 +37,12 @@ export default class PingCommand extends Command {
         fields: [
           {
             name: 'Developed by',
-            value:
-              'Your Discord Tag | GitHub: [Username](https://github.com/username)',
+            value: 'Your Discord Tag | GitHub: [Username](https://github.com/username)',
             inline: false
           },
           {
             name: 'Bot Name',
-            value:
-              `Version: ${pkg.version}` +
-              '\nWritten in TypeScript, powered by Node.js',
+            value: `Version: ${pkg.version}` + '\nWritten in TypeScript, powered by Node.js',
             inline: false
           },
           {

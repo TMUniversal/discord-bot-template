@@ -41,9 +41,9 @@ jobs:
       - name: Test Release
         env:
           CI: true
-          GH_TOKEN: "${{ secrets.GH_TOKEN }}"
+          GH_TOKEN: '${{ secrets.GH_TOKEN }}'
           GITHUB_HEAD_REF: $GITHUB_HEAD_REF
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         run: |
-            echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > /home/runner/work/_temp/.npmrc
-            npx semantic-release --dry-run --debug -b $GITHUB_HEAD_REF
+          echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > /home/runner/work/_temp/.npmrc
+          npx semantic-release --dry-run --debug -b $GITHUB_HEAD_REF

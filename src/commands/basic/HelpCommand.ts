@@ -28,10 +28,7 @@ export default class HelpCommand extends Command {
     }
   }
 
-  public async exec (
-    message: Message,
-    { command }: { command: string }
-  ): Promise<Message> {
+  public async exec (message: Message, { command }: { command: string }): Promise<Message> {
     if (!command || command?.length === 0) {
       const helpEmbed = new MessageEmbed()
         .setTitle(this.client.user.username + ' Command List')
@@ -40,13 +37,8 @@ export default class HelpCommand extends Command {
 
       for (const [id, category] of this.client.commandHandler.categories) {
         if (id === 'owner' && !this.hasAccess(message.author)) continue
-        const commands = category
-          .filter(c => (c.ownerOnly ? this.hasAccess(message.author) : true))
-          .map(c => c.id)
-        helpEmbed.addField(
-          `**${id[0].toUpperCase() + id.slice(1)}**`,
-          markdownCodifyArray(commands)
-        )
+        const commands = category.filter(c => (c.ownerOnly ? this.hasAccess(message.author) : true)).map(c => c.id)
+        helpEmbed.addField(`**${id[0].toUpperCase() + id.slice(1)}**`, markdownCodifyArray(commands))
       }
 
       return message.util.send(helpEmbed)
@@ -64,20 +56,13 @@ export default class HelpCommand extends Command {
         .setTimestamp()
 
       if (cmd.aliases.slice(1).length > 0) {
-        embed.addField(
-          'Aliases',
-          markdownCodifyArray(cmd.aliases.slice(1)),
-          true
-        )
+        embed.addField('Aliases', markdownCodifyArray(cmd.aliases.slice(1)), true)
       }
       if (cmd.help.usage) {
         embed.addField('Usage', `\`${cmd.help.usage}\``, true)
       }
       if (cmd.help.examples) {
-        embed.addField(
-          'Examples',
-          markdownCodifyArray(cmd.help.examples, '\n')
-        )
+        embed.addField('Examples', markdownCodifyArray(cmd.help.examples, '\n'))
       }
 
       return message.util.send(embed)

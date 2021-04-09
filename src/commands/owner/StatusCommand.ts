@@ -32,12 +32,8 @@ export default class StatusCommand extends Command {
       newStatus = (await this.client.statusUpdater.updateStatus()).activities[0]
     }
     else {
-      newStatus = (
-        await this.client.statusUpdater.updateStatus({ name: args.status })
-      ).activities[0]
+      newStatus = (await this.client.statusUpdater.updateStatus({ name: args.status })).activities[0]
     }
-    return await message.util.send(
-      `Status changed to: \`${newStatus.type} ${newStatus.name}\``
-    )
+    return await message.util.send(`Status changed to: \`${newStatus.type} ${newStatus.name}\``)
   }
 }
