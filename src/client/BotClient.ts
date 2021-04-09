@@ -11,7 +11,6 @@ import {
 } from 'discord.js'
 import * as path from 'path'
 import configFile from '../config'
-import CounterManager from '../structures/CounterManager'
 import EventEmitterSingleton from '../structures/EventEmitterSingleton'
 import { WebhookLogger } from '../structures/WebhookLogger'
 
@@ -25,7 +24,6 @@ export default class BotClient extends AkairoClient {
   public logger: WebhookLogger
   public statusUpdater: StatusUpdater
   public eventEmitter: EventEmitterSingleton
-  public counter: CounterManager
 
   public listenerHandler: ListenerHandler = new ListenerHandler(this, {
     directory: path.join(__dirname, '..', 'events')
@@ -69,7 +67,6 @@ export default class BotClient extends AkairoClient {
     console.log('[Client]', 'Initializing...')
 
     this.eventEmitter = EventEmitterSingleton.instance
-    this.counter = new CounterManager()
     this.config = config
     this.logger = WebhookLogger.instance
     this.statusUpdater = new StatusUpdater(
@@ -155,7 +152,6 @@ export default class BotClient extends AkairoClient {
       'Received exit signal => quitting in 4 seconds...'
     )
     this.destroy()
-    this.counter.destroy()
     setTimeout(() => {
       this.logger.warn('PROCESS', 'Exit.')
       process.exit(0)

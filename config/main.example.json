@@ -6,9 +6,5 @@
   },
   "prefix": ">",
   "owners": "",
-  "userBlacklist": ["<some id>"],
-  "counter": {
-    "namespace": "",
-    "someKey": ""
-  }
+  "userBlacklist": ["<some id>"]
 }
