@@ -4,7 +4,7 @@
       "name": "discord-bot",
       "script": "build/index.js",
       "instances": "1",
-      "interpreter": "node@14.4.0",
+      "interpreter": "node@15.5.1",
       "watch": false,
       "args": ["--color"],
       "merge_logs": true,

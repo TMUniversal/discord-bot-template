@@ -4,10 +4,7 @@ export function toDiscordMarkdownLink (url: string, name?: string) {
   return `[${name || url}](${url})`
 }
 
-export function dateFormat (
-  date: Date | Moment = new Date(),
-  options = { fromNow: true, suffix: true }
-) {
+export function dateFormat (date: Date | Moment = new Date(), options = { fromNow: true, suffix: true }) {
   const sMoment = moment(date)
   const formatted = sMoment.format('DD/MM/YYYY HH:mm:ss')
   if (options.fromNow) {
@@ -16,9 +13,6 @@ export function dateFormat (
   return formatted
 }
 
-export function markdownCodifyArray (
-  input: string[] | number[],
-  separator = ' '
-) {
+export function markdownCodifyArray (input: string[] | number[], separator = ' ') {
   return '`' + input.join(`\`${separator}\``) + '`'
 }

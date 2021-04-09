@@ -2,21 +2,14 @@
  * @author Hydractify
  * @see https://github.com/Hydractify/kanna_kobayashi
  */
-import {
-  MessageAttachment,
-  WebhookClient,
-  WebhookMessageOptions
-} from 'discord.js'
+import { MessageAttachment, WebhookClient, WebhookMessageOptions } from 'discord.js'
 
 import { colors, LogLevel } from '../types/LogLevel'
 import { Logger } from './Logger'
 import { MessageEmbed } from './MessageEmbed'
 import configFile from '../config'
 
-const webhook: WebhookClient = new WebhookClient(
-  configFile.webhook.id,
-  configFile.webhook.secret
-)
+const webhook: WebhookClient = new WebhookClient(configFile.webhook.id, configFile.webhook.secret)
 
 export class WebhookLogger extends Logger {
   protected static _instance: WebhookLogger
@@ -33,13 +26,9 @@ export class WebhookLogger extends Logger {
 
     const cleaned: string = this._prepareText(data)
 
-    const embed: MessageEmbed = new MessageEmbed()
-      .setTimestamp()
-      .setColor(colors[level][2])
-      .setFooter(this._processTag)
+    const embed: MessageEmbed = new MessageEmbed().setTimestamp().setColor(colors[level][2]).setFooter(this._processTag)
     const options: WebhookMessageOptions = {
-      avatarURL:
-        'https://vignette.wikia.nocookie.net/avatar/images/1/1f/Joo_Dee.png/revision/latest?cb=20140422090643',
+      avatarURL: 'https://vignette.wikia.nocookie.net/avatar/images/1/1f/Joo_Dee.png/revision/latest?cb=20140422090643',
       embeds: [embed],
       username: '"Discord Bot" Status'
     }

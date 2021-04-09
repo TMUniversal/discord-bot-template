@@ -14,9 +14,6 @@ export default class CommandLoggerListener extends Listener {
   }
 
   public async exec (message: Message, command: Command, args?: any): Promise<void> {
-    return await this.logger.info(
-      'Command Issued',
-      `in ${!message.guild ? 'DMs' : 'a guild'} > ${command.id}`
-    )
+    return await this.logger.info('Command Issued', `in ${!message.guild ? 'DMs' : 'a guild'} > ${command.id}`)
   }
 }

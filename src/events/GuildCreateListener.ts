@@ -14,9 +14,6 @@ export default class GuildCreateListener extends Listener {
   }
 
   public exec (guild: Guild): void {
-    this.logger.info(
-      'GUILD JOIN',
-      `${this.client.user.tag} has joined ${guild.name}`
-    )
+    this.logger.info('GUILD JOIN', `${this.client.user.tag} has joined ${guild.name}`)
   }
 }

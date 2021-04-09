@@ -150,8 +150,7 @@ export class Logger {
 
     if (this._logLevel < level) return
     // eslint-disable-next-line no-undef
-    const out: NodeJS.WritableStream =
-      level > LogLevel.WARN ? process.stdout : process.stderr
+    const out: NodeJS.WritableStream = level > LogLevel.WARN ? process.stdout : process.stderr
 
     out.write(
       [
@@ -180,5 +179,4 @@ export class Logger {
 /**
  * A logger, except that the logging functions do not accept a tag anymore.
  */
-export type AttachedLogger = Omit<Logger, LevelFunctions> &
-Record<LevelFunctions, (...input: any[]) => Promise<void>>
+export type AttachedLogger = Omit<Logger, LevelFunctions> & Record<LevelFunctions, (...input: any[]) => Promise<void>>
