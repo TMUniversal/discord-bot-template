@@ -359,7 +359,7 @@
     micromatch "^4.0.0"
     p-reduce "^2.0.0"
 
-"@semantic-release/github@^7.0.0", "@semantic-release/github@^7.2.0":
+"@semantic-release/github@^7.0.0", "@semantic-release/github@^7.2.1":
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.2.1.tgz#e833245746413e0830b65112331ca0a00b35cf95"
   integrity sha512-+gOhbaG4T3xJb6aTZu1/7KvCmYKRChkasdIyFWdaGaTWVeGpdl4o0zMviV1z3kRcgPOSXeqjHSQ6SOQAfHQiDw==
@@ -381,7 +381,7 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@^7.0.0", "@semantic-release/npm@^7.0.10":
+"@semantic-release/npm@^7.0.0", "@semantic-release/npm@^7.1.1":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.1.1.tgz#90a0970f12b963fa846e5cdf896e6c7d996c1a64"
   integrity sha512-zTYAno1j49XiH+uAVCY47dKOJAagA/MaJb26FFIfNujNHw3GYXk3ygsFa5CSa55xsO0qEMLcsDX3f3ByCg6nZw==
@@ -460,16 +460,16 @@
   resolved "https://registry.yarnpkg.com/@tmware/prettier-config/-/prettier-config-1.0.3.tgz#6d1c93548e3373f4ff9cb53f626c945df416e789"
   integrity sha512-cn7f16oVNfoI5v0qgepfR9zYVLbGZoJzICfiAFXtt9t/lgG43gJ4tFrDXn4ZBbjSVxBSwTpIo+UUGbgAu42Kwg==
 
-"@tmware/semantic-release-npm-github-publish@^1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@tmware/semantic-release-npm-github-publish/-/semantic-release-npm-github-publish-1.4.2.tgz#916c0d206685ec166d858e3bf9692d3678684425"
-  integrity sha512-rYUtdccxUliv85OaQ4hrHY04lIok44S00QxIS/PRhnRaQt8tw1Bn3IHcBMBdS9xxTUPPSC68fc/FV01j0XVl3w==
+"@tmware/semantic-release-npm-github-publish@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@tmware/semantic-release-npm-github-publish/-/semantic-release-npm-github-publish-1.4.3.tgz#b7ea16f70c894d713fa4a18db7d34ba2f1e24c8e"
+  integrity sha512-mbbO/RQhSCjwsEWq/xUg9GPBJq/nbrMUeAwvFJ1de3lnVLcwfahHRA0TaPg+OtVf2o2g6KnrvC38X2W+uFmZyw==
   dependencies:
     "@semantic-release/changelog" "^5.0.1"
     "@semantic-release/commit-analyzer" "^8.0.1"
     "@semantic-release/git" "^9.0.0"
-    "@semantic-release/github" "^7.2.0"
-    "@semantic-release/npm" "^7.0.10"
+    "@semantic-release/github" "^7.2.1"
+    "@semantic-release/npm" "^7.1.1"
     "@semantic-release/release-notes-generator" "^9.0.2"
 
 "@tmware/status-rotate@^1.2.2":
