@@ -34,7 +34,7 @@
   "devDependencies": {
     "@tmuniversal/ts": "^1.2.1",
     "@tmware/eslint-config": "^1.1.2",
-    "@tmware/eslint-config-typescript": "^1.0.5",
+    "@tmware/eslint-config-typescript": "^1.0.7",
     "@tmware/prettier-config": "^1.0.3",
     "@tmware/semantic-release-npm-github-publish": "^1.4.2",
     "@types/app-root-path": "^1.2.4",
