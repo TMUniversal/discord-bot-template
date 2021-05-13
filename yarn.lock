@@ -446,12 +446,10 @@
     eslint-plugin-node "^11.1.0"
     eslint-plugin-promise "^4.2.1"
 
-"@tmware/jitsuyo@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.5.1.tgz#eccb7ec145735a6fa8add61b78f429cbce05893e"
-  integrity sha512-aizViPvStf7/G5AYHp6bBicHFiTXTbM4NFgvj8fMXv1hjIR1aDKGJ6teSmFktmJDQE501+C2bVKIe4OqVrpACQ==
-  dependencies:
-    acronymresolver "^1.1.7"
+"@tmware/jitsuyo@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.6.1.tgz#0a780808be12804cf5983cc36267fd244dcaf3ad"
+  integrity sha512-TMZfN7oFmFGpbQrEuU5kNUehv1O1jaXK61W5e14/UzOtD0x6+ZFvW+dxbTGwv4uGa/rm8U369qCLpsbN6B+55w==
 
 "@tmware/prettier-config@^1.0.3":
   version "1.0.3"
@@ -470,21 +468,21 @@
     "@semantic-release/npm" "^7.0.10"
     "@semantic-release/release-notes-generator" "^9.0.2"
 
-"@tmware/status-rotate@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.2.tgz#4964d7113cfe68a23e5134b5ad081fb0adf7be00"
-  integrity sha512-JlnOu22o0H+78BKTguVcygjfQziRa3s7V1EXW1hr9oqS238b55OrJbx57Nh/ZrrCsGqwSa8d5BOQWC7Rxot8qQ==
+"@tmware/status-rotate@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.4.tgz#a8703988bf7121cb3e1a08d0e2abcac46a2027d5"
+  integrity sha512-lBZp7yDM5GV70s+fls8TaCI/QTIx6If8J3gTzkCpSr5I7m+ksgZDH+bSqzxCcLRqhcv579Fmsrj0+8U71r08EA==
   dependencies:
-    "@tmware/jitsuyo" "^1.5.1"
-    "@tmware/variable-parser" "^1.1.3"
+    "@tmware/jitsuyo" "^1.6.1"
+    "@tmware/variable-parser" "^1.2.0"
     axios "0.21.1"
     discord-akairo "^8.1.0"
     discord.js "^12.5.3"
 
-"@tmware/variable-parser@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@tmware/variable-parser/-/variable-parser-1.1.3.tgz#30f7c2539c60450870ec4573292361440e5518f8"
-  integrity sha512-+8tsUSuvclhkZ5AvMp7VSlsUifQ49FO2iIQlfdOJhZQebZ/Q/30fZ9PI8OSc8jZodnd8wg22f7YAOHzd9Je+XQ==
+"@tmware/variable-parser@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@tmware/variable-parser/-/variable-parser-1.2.0.tgz#7b7484865e2d52f0447cb6e109c65f789d7845d6"
+  integrity sha512-k4er2dAUmttXAJFZ2s+MuRVIsKVSAqtK5tb8GaNdP0YxNi+LVAc96OTx5o1l8L6gnYENpZDZsddH3WP3kFRh0Q==
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -656,11 +654,6 @@ acorn@^7.4.0:
   version "7.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
-
-acronymresolver@^1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/acronymresolver/-/acronymresolver-1.1.7.tgz#b85adda3070ca0586610b4a38c188db6fdface4a"
-  integrity sha512-Et5/djDc6G4r5vTZqLfq34QVJh3DN0Nk0vRRSyZ6gaxccccfjaubJ+0S0WwL2advfPFjFivOquLknPjvi5/+0A==
 
 agent-base@6:
   version "6.0.2"
