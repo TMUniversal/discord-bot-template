@@ -38,7 +38,7 @@
     "@tmware/prettier-config": "^1.0.3",
     "@tmware/semantic-release-npm-github-publish": "^1.4.3",
     "@types/app-root-path": "^1.2.4",
-    "@types/convict": "^6.0.1",
+    "@types/convict": "^6.0.2",
     "@types/debug": "^4.1.5",
     "@types/moment-duration-format": "^2.2.2",
     "@types/node": "^15.0.3",
