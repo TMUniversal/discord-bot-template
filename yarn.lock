@@ -494,10 +494,10 @@
   resolved "https://registry.yarnpkg.com/@types/app-root-path/-/app-root-path-1.2.4.tgz#a78b703282b32ac54de768f5512ecc3569919dc7"
   integrity sha1-p4twMoKzKsVN52j1US7MNWmRncc=
 
-"@types/convict@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@types/convict/-/convict-6.0.1.tgz#224832262e1e3b5a7cca5bcc88e550ca70b6b230"
-  integrity sha512-5094Bw9nSvkUNV7qqUvzDt6lgWZpKbpR/AJu8lmtojKa12nxtHHGrPFwK3YP4YZA1rCc2tbpI5TUEBU35eqVxg==
+"@types/convict@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@types/convict/-/convict-6.1.0.tgz#9ac2948b647cd5b5a90dcdeaf07a30393ac0d2d0"
+  integrity sha512-Z2tgU+8MTuK0pcae7zdUPdMDtzhGv6sSaCzGDNobhCad3JXMGxa50afpROuES7GtSaRl6stnP/geOkEAxCkuow==
   dependencies:
     "@types/node" "*"
 
