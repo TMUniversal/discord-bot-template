@@ -36,7 +36,7 @@
     "@tmware/eslint-config": "^1.1.2",
     "@tmware/eslint-config-typescript": "^1.0.8",
     "@tmware/prettier-config": "^1.0.3",
-    "@tmware/semantic-release-npm-github-publish": "^1.4.3",
+    "@tmware/semantic-release-npm-github-publish": "^1.4.4",
     "@types/app-root-path": "^1.2.4",
     "@types/convict": "^6.1.1",
     "@types/debug": "^4.1.6",

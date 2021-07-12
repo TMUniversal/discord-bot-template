@@ -373,10 +373,10 @@
     micromatch "^4.0.0"
     p-reduce "^2.0.0"
 
-"@semantic-release/github@^7.0.0", "@semantic-release/github@^7.2.1":
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.2.1.tgz#e833245746413e0830b65112331ca0a00b35cf95"
-  integrity sha512-+gOhbaG4T3xJb6aTZu1/7KvCmYKRChkasdIyFWdaGaTWVeGpdl4o0zMviV1z3kRcgPOSXeqjHSQ6SOQAfHQiDw==
+"@semantic-release/github@^7.0.0", "@semantic-release/github@^7.2.3":
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.2.3.tgz#20a83abd42dca43d97f03553de970eac72856c85"
+  integrity sha512-lWjIVDLal+EQBzy697ayUNN8MoBpp+jYIyW2luOdqn5XBH4d9bQGfTnjuLyzARZBHejqh932HVjiH/j4+R7VHw==
   dependencies:
     "@octokit/rest" "^18.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -384,7 +384,7 @@
     bottleneck "^2.18.1"
     debug "^4.0.0"
     dir-glob "^3.0.0"
-    fs-extra "^9.0.0"
+    fs-extra "^10.0.0"
     globby "^11.0.0"
     http-proxy-agent "^4.0.0"
     https-proxy-agent "^5.0.0"
@@ -395,15 +395,15 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@^7.0.0", "@semantic-release/npm@^7.1.1":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.1.1.tgz#90a0970f12b963fa846e5cdf896e6c7d996c1a64"
-  integrity sha512-zTYAno1j49XiH+uAVCY47dKOJAagA/MaJb26FFIfNujNHw3GYXk3ygsFa5CSa55xsO0qEMLcsDX3f3ByCg6nZw==
+"@semantic-release/npm@^7.0.0", "@semantic-release/npm@^7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.1.3.tgz#1d64c41ff31b100299029c766ecc4d1f03aa5f5b"
+  integrity sha512-x52kQ/jR09WjuWdaTEHgQCvZYMOTx68WnS+TZ4fya5ZAJw4oRtJETtrvUw10FdfM28d/keInQdc66R1Gw5+OEQ==
   dependencies:
     "@semantic-release/error" "^2.2.0"
     aggregate-error "^3.0.0"
     execa "^5.0.0"
-    fs-extra "^9.0.0"
+    fs-extra "^10.0.0"
     lodash "^4.17.15"
     nerf-dart "^1.0.0"
     normalize-url "^6.0.0"
@@ -414,17 +414,17 @@
     semver "^7.1.2"
     tempy "^1.0.0"
 
-"@semantic-release/release-notes-generator@^9.0.0", "@semantic-release/release-notes-generator@^9.0.2":
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-9.0.2.tgz#a00da9f984b6d42d16e037ecd529f58665cde938"
-  integrity sha512-xGFSidhGqB27uwgWCU6y0gbf4r/no5flOAkJyFFc4+bPf8S+LfAVm7xhhlK5VPXLt2Iu1RBH8F+IgMK2ah5YpA==
+"@semantic-release/release-notes-generator@^9.0.0", "@semantic-release/release-notes-generator@^9.0.3":
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-9.0.3.tgz#d541221c6512e9619f25ba8079527e34288e6904"
+  integrity sha512-hMZyddr0u99OvM2SxVOIelHzly+PP3sYtJ8XOLHdMp8mrluN5/lpeTnIO27oeCYdupY/ndoGfvrqDjHqkSyhVg==
   dependencies:
     conventional-changelog-angular "^5.0.0"
     conventional-changelog-writer "^4.0.0"
     conventional-commits-filter "^2.0.0"
     conventional-commits-parser "^3.0.0"
     debug "^4.0.0"
-    get-stream "^5.0.0"
+    get-stream "^6.0.0"
     import-from "^3.0.0"
     into-stream "^6.0.0"
     lodash "^4.17.4"
@@ -470,17 +470,17 @@
   resolved "https://registry.yarnpkg.com/@tmware/prettier-config/-/prettier-config-1.0.3.tgz#6d1c93548e3373f4ff9cb53f626c945df416e789"
   integrity sha512-cn7f16oVNfoI5v0qgepfR9zYVLbGZoJzICfiAFXtt9t/lgG43gJ4tFrDXn4ZBbjSVxBSwTpIo+UUGbgAu42Kwg==
 
-"@tmware/semantic-release-npm-github-publish@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@tmware/semantic-release-npm-github-publish/-/semantic-release-npm-github-publish-1.4.3.tgz#b7ea16f70c894d713fa4a18db7d34ba2f1e24c8e"
-  integrity sha512-mbbO/RQhSCjwsEWq/xUg9GPBJq/nbrMUeAwvFJ1de3lnVLcwfahHRA0TaPg+OtVf2o2g6KnrvC38X2W+uFmZyw==
+"@tmware/semantic-release-npm-github-publish@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@tmware/semantic-release-npm-github-publish/-/semantic-release-npm-github-publish-1.4.4.tgz#38520707dd3a46322e29444670f8b9a951df85d4"
+  integrity sha512-VZd2zmCD0c7K4RDYzhokxYY5UY84lYivfO1R/LfZpbv89+VqneiPr3q4wGDhcaQl0EHzGxqXDiVR0UX6ayrTow==
   dependencies:
     "@semantic-release/changelog" "^5.0.1"
     "@semantic-release/commit-analyzer" "^8.0.1"
     "@semantic-release/git" "^9.0.0"
-    "@semantic-release/github" "^7.2.1"
-    "@semantic-release/npm" "^7.1.1"
-    "@semantic-release/release-notes-generator" "^9.0.2"
+    "@semantic-release/github" "^7.2.3"
+    "@semantic-release/npm" "^7.1.3"
+    "@semantic-release/release-notes-generator" "^9.0.3"
 
 "@tmware/status-rotate@^1.2.5":
   version "1.2.5"
@@ -1952,6 +1952,15 @@ from2@^2.3.0:
   dependencies:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
+
+fs-extra@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.0.0.tgz#9ff61b655dde53fb34a82df84bb214ce802e17c1"
+  integrity sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
 
 fs-extra@^9.0.0:
   version "9.1.0"
