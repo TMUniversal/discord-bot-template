@@ -460,10 +460,10 @@
     eslint-plugin-node "^11.1.0"
     eslint-plugin-promise "^4.2.1"
 
-"@tmware/jitsuyo@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.6.1.tgz#0a780808be12804cf5983cc36267fd244dcaf3ad"
-  integrity sha512-TMZfN7oFmFGpbQrEuU5kNUehv1O1jaXK61W5e14/UzOtD0x6+ZFvW+dxbTGwv4uGa/rm8U369qCLpsbN6B+55w==
+"@tmware/jitsuyo@^1.6.4":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.6.4.tgz#24d9e766ad9db83cd54aa6cd65d26c83210398e0"
+  integrity sha512-0wv/t3UAbQAh+RMNjIWLgah2SqqNZjvcaH4HxxCHXhUFk+FMQbF10B31bFCCXtgTtmbcXmAKnsVf79DDmwXcbA==
 
 "@tmware/prettier-config@^1.0.3":
   version "1.0.3"
@@ -482,21 +482,21 @@
     "@semantic-release/npm" "^7.1.1"
     "@semantic-release/release-notes-generator" "^9.0.2"
 
-"@tmware/status-rotate@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.4.tgz#a8703988bf7121cb3e1a08d0e2abcac46a2027d5"
-  integrity sha512-lBZp7yDM5GV70s+fls8TaCI/QTIx6If8J3gTzkCpSr5I7m+ksgZDH+bSqzxCcLRqhcv579Fmsrj0+8U71r08EA==
+"@tmware/status-rotate@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.5.tgz#a6f037f8478d8c0ee5cd85a4a0e162405a8ce72b"
+  integrity sha512-C68MSb9RFuxxJ1e2J0hjFCG3tQD3iIoWUuw4bCIqqSWChaby+l6ES0di3yrduyUjXOeTU09Y5HIZu9/hch6Kog==
   dependencies:
-    "@tmware/jitsuyo" "^1.6.1"
-    "@tmware/variable-parser" "^1.2.0"
+    "@tmware/jitsuyo" "^1.6.4"
+    "@tmware/variable-parser" "^1.2.2"
     axios "0.21.1"
     discord-akairo "^8.1.0"
     discord.js "^12.5.3"
 
-"@tmware/variable-parser@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@tmware/variable-parser/-/variable-parser-1.2.0.tgz#7b7484865e2d52f0447cb6e109c65f789d7845d6"
-  integrity sha512-k4er2dAUmttXAJFZ2s+MuRVIsKVSAqtK5tb8GaNdP0YxNi+LVAc96OTx5o1l8L6gnYENpZDZsddH3WP3kFRh0Q==
+"@tmware/variable-parser@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@tmware/variable-parser/-/variable-parser-1.2.2.tgz#afe4fc3f4af7fb8806c3869c3f0e0a0e564cc26b"
+  integrity sha512-OLtSbjiq/0yM/0XbjWLfRvdDAlSH/CWMaRVs9co48risALA0T/5j701wPrirzToQf5um80HLxxAS49oS6xbgdg==
 
 "@tootallnate/once@1":
   version "1.1.2"
