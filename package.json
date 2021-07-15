@@ -41,7 +41,7 @@
     "@types/convict": "^6.1.1",
     "@types/debug": "^4.1.6",
     "@types/moment-duration-format": "^2.2.3",
-    "@types/node": "^16.3.1",
+    "@types/node": "^16.3.2",
     "@types/ws": "^7.4.6",
     "eslint": "^7.30.0",
     "husky": "^7.0.1",
