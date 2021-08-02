@@ -20,7 +20,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@tmware/status-rotate": "^1.2.5",
+    "@tmware/status-rotate": "^1.2.6",
     "app-root-path": "^3.0.0",
     "axios": "0.21.1",
     "convict": "^6.2.0",
