@@ -482,10 +482,10 @@
     "@semantic-release/npm" "^7.1.3"
     "@semantic-release/release-notes-generator" "^9.0.3"
 
-"@tmware/status-rotate@^1.2.5":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.5.tgz#a6f037f8478d8c0ee5cd85a4a0e162405a8ce72b"
-  integrity sha512-C68MSb9RFuxxJ1e2J0hjFCG3tQD3iIoWUuw4bCIqqSWChaby+l6ES0di3yrduyUjXOeTU09Y5HIZu9/hch6Kog==
+"@tmware/status-rotate@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.6.tgz#8c23b8e63c5d07fe30ffb4cb697118641baa2e7b"
+  integrity sha512-gOzg8AKadkQSJFWl5hFKXMJDjE/R1zAQC2UB/bZkyWf3+yLJupeUdvb6zZjB9VuIU4MDNd3JmgN3IWtSOAh/zw==
   dependencies:
     "@tmware/jitsuyo" "^1.6.4"
     "@tmware/variable-parser" "^1.2.2"
