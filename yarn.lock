@@ -446,10 +446,10 @@
     eslint-plugin-node "^11.1.0"
     eslint-plugin-promise "^4.2.1"
 
-"@tmware/jitsuyo@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.6.1.tgz#0a780808be12804cf5983cc36267fd244dcaf3ad"
-  integrity sha512-TMZfN7oFmFGpbQrEuU5kNUehv1O1jaXK61W5e14/UzOtD0x6+ZFvW+dxbTGwv4uGa/rm8U369qCLpsbN6B+55w==
+"@tmware/jitsuyo@^1.6.5":
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.6.7.tgz#15147c4158f9075f0f5981351fe51dc866837acb"
+  integrity sha512-Hby1ZAfM91xE7Ep90cgtfs00HO4BH9qYuDPB/pmjfio0FnuFLZGEUmZ9tQdsgWs+JBVcFRQCwuaqToHbC200MQ==
 
 "@tmware/prettier-config@^1.0.3":
   version "1.0.3"
@@ -468,21 +468,19 @@
     "@semantic-release/npm" "^7.1.1"
     "@semantic-release/release-notes-generator" "^9.0.2"
 
-"@tmware/status-rotate@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.4.tgz#a8703988bf7121cb3e1a08d0e2abcac46a2027d5"
-  integrity sha512-lBZp7yDM5GV70s+fls8TaCI/QTIx6If8J3gTzkCpSr5I7m+ksgZDH+bSqzxCcLRqhcv579Fmsrj0+8U71r08EA==
+"@tmware/status-rotate@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.9.tgz#0358a0c634e7885c852db7bbed32db64886b6d0d"
+  integrity sha512-6LsE2DuxNR8bw2nHAGFTfkmLRIhlYA64P0FVGc6CcHWZ7yE2rHvmOvDuvjtaLz7XM92PbJkk8YnIhG3yIA+ncg==
   dependencies:
-    "@tmware/jitsuyo" "^1.6.1"
-    "@tmware/variable-parser" "^1.2.0"
-    axios "0.21.1"
-    discord-akairo "^8.1.0"
-    discord.js "^12.5.3"
+    "@tmware/jitsuyo" "^1.6.5"
+    "@tmware/variable-parser" "^1.2.2"
+    axios "0.21.4"
 
-"@tmware/variable-parser@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@tmware/variable-parser/-/variable-parser-1.2.0.tgz#7b7484865e2d52f0447cb6e109c65f789d7845d6"
-  integrity sha512-k4er2dAUmttXAJFZ2s+MuRVIsKVSAqtK5tb8GaNdP0YxNi+LVAc96OTx5o1l8L6gnYENpZDZsddH3WP3kFRh0Q==
+"@tmware/variable-parser@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@tmware/variable-parser/-/variable-parser-1.2.2.tgz#afe4fc3f4af7fb8806c3869c3f0e0a0e564cc26b"
+  integrity sha512-OLtSbjiq/0yM/0XbjWLfRvdDAlSH/CWMaRVs9co48risALA0T/5j701wPrirzToQf5um80HLxxAS49oS6xbgdg==
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -878,6 +876,13 @@ axios@0.21.1:
   integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
     follow-redirects "^1.10.0"
+
+axios@0.21.4:
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+  dependencies:
+    follow-redirects "^1.14.0"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -1392,7 +1397,7 @@ discord-akairo@^8.1.0:
   resolved "https://registry.yarnpkg.com/discord-akairo/-/discord-akairo-8.1.0.tgz#9f3d910e12c197d40d3522a3a93679e2a746a6ca"
   integrity sha512-INWYmHo6NgyYx1ZKGSCmgznVfvkXpWGj4fGCGjO8IPkZ06Bidb9YKr4rXy2lwG0kprCjvqY0qbbhcw6N050abQ==
 
-discord.js@12.5.3, discord.js@^12.5.3:
+discord.js@12.5.3:
   version "12.5.3"
   resolved "https://registry.yarnpkg.com/discord.js/-/discord.js-12.5.3.tgz#56820d473c24320871df9ea0bbc6b462f21cf85c"
   integrity sha512-D3nkOa/pCkNyn6jLZnAiJApw2N9XrIsXUAdThf01i7yrEuqUmDGc7/CexVWwEcgbQR97XQ+mcnqJpmJ/92B4Aw==
@@ -1880,6 +1885,11 @@ follow-redirects@^1.10.0:
   version "1.13.3"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
   integrity sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
+
+follow-redirects@^1.14.0:
+  version "1.14.9"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.9.tgz#dd4ea157de7bfaf9ea9b3fbd85aa16951f78d8d7"
+  integrity sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==
 
 forever-agent@~0.6.1:
   version "0.6.1"
