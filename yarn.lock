@@ -481,10 +481,10 @@
     eslint-plugin-node "^11.1.0"
     eslint-plugin-promise "^5.1.0"
 
-"@tmware/jitsuyo@^1.6.5":
-  version "1.6.5"
-  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.6.5.tgz#5828f96ab2f3361c1dd6cf953521060b3c6288c5"
-  integrity sha512-BcWnRHBE+2oTWkCMtASNv13ZlyFo2x5mhLm/Ty6Mo82UaTwfXSChNv78S5/nkOWO3lCTqDnRHUBHjfwqhPz4Ww==
+"@tmware/jitsuyo@^1.6.7":
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/@tmware/jitsuyo/-/jitsuyo-1.6.7.tgz#15147c4158f9075f0f5981351fe51dc866837acb"
+  integrity sha512-Hby1ZAfM91xE7Ep90cgtfs00HO4BH9qYuDPB/pmjfio0FnuFLZGEUmZ9tQdsgWs+JBVcFRQCwuaqToHbC200MQ==
 
 "@tmware/prettier-config@^1.0.3":
   version "1.0.3"
@@ -503,14 +503,14 @@
     "@semantic-release/npm" "^7.1.3"
     "@semantic-release/release-notes-generator" "^9.0.3"
 
-"@tmware/status-rotate@^1.2.8":
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.8.tgz#e13d4afb7eb75921e6537653e1c2cdaeb6dac480"
-  integrity sha512-51h1cYek0mu+9MagIGIlYlKdOT8CMEFdE5izmW8NGZnewBZxJeYJ7ghGeqJRc9fZtVSv4565eBjF5lQ10pYo6w==
+"@tmware/status-rotate@^1.2.10":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@tmware/status-rotate/-/status-rotate-1.2.10.tgz#7921b162ec40bf964e2ee8750c321a5ec4a5d8cf"
+  integrity sha512-NAp7sx5yvSyuwOZI+nYpQ5Tz9YKAF2EH4SGmBhJCYPPAcSMIz1ZOhMEbNdNLSvc0tG+1i1vOgdnqIysPffNaEw==
   dependencies:
-    "@tmware/jitsuyo" "^1.6.5"
+    "@tmware/jitsuyo" "^1.6.7"
     "@tmware/variable-parser" "^1.2.2"
-    axios "0.21.1"
+    axios "0.26.1"
 
 "@tmware/variable-parser@^1.2.2":
   version "1.2.2"
@@ -905,6 +905,13 @@ axios@0.21.1:
   integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
     follow-redirects "^1.10.0"
+
+axios@0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.1.tgz#1ede41c51fcf51bbbd6fd43669caaa4f0495aaa9"
+  integrity sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==
+  dependencies:
+    follow-redirects "^1.14.8"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -1949,6 +1956,11 @@ follow-redirects@^1.10.0:
   version "1.13.3"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
   integrity sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
+
+follow-redirects@^1.14.8:
+  version "1.14.9"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.9.tgz#dd4ea157de7bfaf9ea9b3fbd85aa16951f78d8d7"
+  integrity sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==
 
 forever-agent@~0.6.1:
   version "0.6.1"
